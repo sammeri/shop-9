@@ -15,7 +15,7 @@ const pending = computed(() => favoritesStore.pending);
 </script>
 
 <template>
-  <div class="container flex min-h-full flex-col items-center">
+  <div class="container flex min-h-full w-full grow flex-col items-center">
     <div v-show="!pending" style="height: 6px"></div>
     <ProgressBar
       v-show="pending"
@@ -26,7 +26,7 @@ const pending = computed(() => favoritesStore.pending);
     <h1 class="my-3 mr-auto text-2xl font-bold sm:text-3xl md:text-4xl">Избранное</h1>
     <div
       v-if="!pending && productsF.length"
-      class="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
+      class="mb-4 grid w-full grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
     >
       <ProductItem v-for="product in productsF" :key="product.id" :item="product" />
     </div>

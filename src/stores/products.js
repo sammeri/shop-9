@@ -10,8 +10,10 @@ export const useProducts = defineStore('products', () => {
     pending.value = true;
     try {
       products.value = await getProducts();
+      return products.value;
     } catch (error) {
       console.log(error);
+      throw new Error(error);
     } finally {
       pending.value = false;
     }

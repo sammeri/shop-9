@@ -1,7 +1,10 @@
 import { computed, ref } from 'vue';
 import { defineStore, acceptHMRUpdate } from 'pinia';
+import { useProducts } from './products';
 
 export const useCart = defineStore('cart', () => {
+  const productsStore = useProducts();
+  const { getData } = productsStore;
   const pending = ref(true);
   const productsCart = ref([]);
   const counter = computed(() => {
@@ -13,6 +16,19 @@ export const useCart = defineStore('cart', () => {
 
     return total;
   });
+  const checkFavorites = (productsArr) => {
+    const favorites = localStorage.getItem('favorites');
+    if (favorites) {
+      try {
+        const items = JSON.parse(favorites);
+        productsArr.forEach((p) => {
+          p.isFavorite = !!items.find((el) => el.id === p.id);
+        });
+      } catch (error) {
+        console.error('Ошибка парсинга избранных товаров(favorites):', error);
+      }
+    }
+  };
 
   const getDataCart = async () => {
     pending.value = true;
@@ -20,6 +36,7 @@ export const useCart = defineStore('cart', () => {
     setTimeout(() => {
       if (localStorage.getItem('cart')) {
         productsCart.value = JSON.parse(localStorage.getItem('cart'));
+        checkFavorites(productsCart.value);
       } else {
         productsCart.value = [];
       }
@@ -30,9 +47,13 @@ export const useCart = defineStore('cart', () => {
 
   const addProduct = (item) => {
     if (productsCart.value.find((el) => el.id === item.id)) {
-      // item.isFavorite = false
       const index = productsCart.value.findIndex((p) => p.id === item.id);
-      productsCart.value[index].quantity++;
+
+      if (productsCart.value[index].quantity) {
+        productsCart.value[index].quantity < 10
+          ? productsCart.value[index].quantity++
+          : productsCart.value[index].quantity;
+      }
     } else {
       item.quantity = 1;
       productsCart.value.push(item);
@@ -43,6 +64,7 @@ export const useCart = defineStore('cart', () => {
 
   const removeProduct = (item) => {
     const index = productsCart.value.findIndex((p) => p.id === item.id);
+    removeQuantity(index);
     productsCart.value.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(productsCart.value));
   };
@@ -59,6 +81,21 @@ export const useCart = defineStore('cart', () => {
     }
   };
 
+  const addAllCart = async () => {
+    const data = await getData();
+
+    data.forEach((item) => {
+      addProduct(item);
+    });
+
+    checkFavorites(productsCart.value);
+  };
+
+  const removeAllCart = () => {
+    productsCart.value = [];
+    localStorage.setItem('cart', JSON.stringify(productsCart.value));
+  };
+
   return {
     pending,
     productsCart,
@@ -68,6 +105,8 @@ export const useCart = defineStore('cart', () => {
     removeProduct,
     addQuantity,
     removeQuantity,
+    addAllCart,
+    removeAllCart,
   };
 });
 

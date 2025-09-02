@@ -15,6 +15,7 @@ service.interceptors.request.use(
     return conf;
   },
   (error) => {
+    console.log(error);
     Promise.reject(error);
   },
 );
@@ -28,6 +29,10 @@ service.interceptors.response.use(
   },
   (error) => {
     /* 401, 403, 500 ... */
+    console.log(error);
+    if (error.status === 404) {
+      Promise.reject(new Error(`${error.status} - ресурса не существует`));
+    }
     Promise.reject(new Error(error));
   },
 );

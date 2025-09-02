@@ -11,6 +11,7 @@ const cartStore = useCart();
 const productsCart = computed(() => cartStore.productsCart);
 const pending = computed(() => cartStore.pending);
 const counter = computed(() => cartStore.counter);
+const productTextArr = ['товар', 'товара', 'товаров'];
 const total = computed(() => {
   let sum = 0;
   productsCart.value.map((item) => {
@@ -20,18 +21,20 @@ const total = computed(() => {
   return sum.toFixed(1);
 });
 // methods
-function num_word(value, words) {
+const { addAllCart, removeAllCart } = cartStore;
+
+const num_word = (value, words) => {
   value = Math.abs(value) % 100;
   const num = value % 10;
   if (value > 10 && value < 20) return words[2];
   if (num > 1 && num < 5) return words[1];
   if (num == 1) return words[0];
   return words[2];
-}
+};
 </script>
 
 <template>
-  <div class="container flex min-h-full flex-col items-center">
+  <div class="container flex min-h-full grow flex-col items-center">
     <div v-show="!pending" style="height: 6px"></div>
     <ProgressBar
       v-show="pending"
@@ -39,9 +42,42 @@ function num_word(value, words) {
       mode="indeterminate"
       style="height: 6px"
     ></ProgressBar>
-    <h1 class="my-3 mr-auto text-2xl font-bold sm:text-3xl md:text-4xl">Корзина</h1>
-    <div v-if="!pending && productsCart.length" class="mb-4 grid w-full grid-cols-6 gap-3">
-      <div class="col-start-1 col-end-5 grid gap-3">
+    <div class="my-3 flex w-full justify-between text-2xl">
+      <h1 class="font-bold sm:text-3xl md:text-4xl">Корзина</h1>
+      <div class="flex gap-3">
+        <button
+          type="button"
+          class="flex cursor-pointer items-center gap-1 text-amber-400 hover:text-amber-300"
+          @click="addAllCart()"
+        >
+          <vue-feather
+            class="relative"
+            stroke="currentColor"
+            type="arrow-up-circle"
+            size="16px"
+          ></vue-feather>
+          <span class="text-sm">Добавить всё</span>
+        </button>
+        <button
+          type="button"
+          class="flex cursor-pointer items-center gap-1 text-red-400 hover:text-red-300"
+          @click="removeAllCart()"
+        >
+          <vue-feather
+            class="relative"
+            stroke="currentColor"
+            type="x-circle"
+            size="16px"
+          ></vue-feather>
+          <span class="text-sm">Удалить всё</span>
+        </button>
+      </div>
+    </div>
+    <div
+      v-if="!pending && productsCart.length"
+      class="mb-4 grid w-full auto-rows-min grid-cols-6 grid-rows-subgrid gap-3"
+    >
+      <div class="col-start-1 col-end-5 row-start-1 row-end-9 flex flex-col gap-3">
         <CartProduct
           v-for="(product, index) in productsCart"
           :key="product.id"
@@ -61,9 +97,7 @@ function num_word(value, words) {
         </button>
         <div class="flex w-full items-center justify-between">
           <h3 class="text-2xl font-bold">Ваша корзина</h3>
-          <span class="text-lg">
-            {{ counter }} • {{ num_word(counter, ['товар', 'товара', 'товаров']) }}</span
-          >
+          <span class="text-lg"> {{ counter }} • {{ num_word(counter, productTextArr) }}</span>
         </div>
         <div class="flex w-full justify-between text-lg">
           <span>Товары ({{ counter }})</span>

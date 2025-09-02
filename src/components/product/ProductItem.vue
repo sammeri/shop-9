@@ -49,9 +49,9 @@ const { addProduct } = cartStore;
         </button>
       </div>
 
-      <span :title="item.title" class="line-clamp-1 text-xl leading-6 text-clip">{{
-        item.title
-      }}</span>
+      <span :title="item.title" class="line-clamp-1 text-xl leading-6 text-clip">
+        {{ item.title }}
+      </span>
     </div>
 
     <div
@@ -59,9 +59,20 @@ const { addProduct } = cartStore;
     >
       <span class="text-xl font-bold text-green-500">{{ item.price }} $</span>
       <div class="flex items-center gap-2 text-gray-500 hover:text-black">
+        <!-- <vue-feather type="chevrons-up" fill="currentColor" size="52px"></vue-feather> -->
         <button @click.prevent="addProduct(item)" class="flex cursor-pointer">
-          <vue-feather class="" type="shopping-cart" fill="currentColor"></vue-feather>
-          <vue-feather class="" type="plus" fill="currentColor"></vue-feather>
+          <!-- {{ console.log(item) }} -->
+          <vue-feather
+            :class="item.quantity ? 'text-green-400' : ''"
+            type="shopping-cart"
+            fill="currentColor"
+          ></vue-feather>
+          <vue-feather
+            :class="item.quantity ? 'text-green-400' : ''"
+            :type="item.quantity ? 'check' : 'plus'"
+            fill="none"
+          ></vue-feather>
+          <!-- <span>{{ console.log(item) }}</span> -->
         </button>
       </div>
     </div>

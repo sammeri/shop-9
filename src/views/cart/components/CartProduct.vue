@@ -21,7 +21,7 @@ const cartStore = useCart();
 // computed
 const sum = computed(() => {
   let num = props.item.price * props.item.quantity;
-  return num.toFixed(1);
+  return num.toFixed(2);
 });
 
 // methods
@@ -33,11 +33,13 @@ const { addQuantity, removeQuantity, removeProduct } = cartStore;
   <div class="z-50 flex">
     <div class="succsess-alert flex h-32 w-full cursor-default items-center bg-[#ffffff]">
       <div class="flex h-full gap-4 p-3">
-        <div class="flex h-full w-28 justify-center bg-white/5 text-[#2b9875] backdrop-blur-xl">
+        <div
+          class="flex h-full w-28 shrink-0 justify-center bg-white/5 text-[#2b9875] backdrop-blur-xl"
+        >
           <v-lazy-image class="w-auto object-contain" :src="item.image" alt="Product Image" />
         </div>
         <div class="flex flex-col justify-between">
-          <p class="text-gray-500">{{ item.title }}</p>
+          <p class="line-clamp-2 text-gray-500">{{ item.title }}</p>
           <div class="flex gap-2">
             <button
               class="top-0 right-0 z-10 flex cursor-pointer items-center p-2"
@@ -62,7 +64,7 @@ const { addQuantity, removeQuantity, removeProduct } = cartStore;
         </div>
       </div>
 
-      <div class="ml-auto flex items-center gap-3 p-3">
+      <div class="ml-auto flex shrink-0 items-center gap-3 p-3">
         <div class="flex flex-col items-center">
           <span class="text-xl font-bold text-green-500">{{ sum }} $</span>
           <span class="text-sm text-gray-500">Lorem ipsum, dolor sit amet</span>

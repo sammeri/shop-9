@@ -15,14 +15,28 @@ onMounted(async () => {
   try {
     await getData();
     const favorites = localStorage.getItem('favorites');
-    if (favorites) {
+    const carts = localStorage.getItem('cart');
+    if (favorites || carts) {
+      if (favorites) {
+        try {
+          const items = JSON.parse(favorites);
+          products.value.forEach((p) => {
+            p.isFavorite = !!items.find((el) => el.id === p.id);
+          });
+        } catch (error) {
+          console.error('Ошибка парсинга избранных товаров(favorites):', error);
+        }
+      }
       try {
-        const items = JSON.parse(favorites);
+        const items = JSON.parse(carts);
         products.value.forEach((p) => {
-          p.isFavorite = !!items.find((el) => el.id === p.id);
+          const itemQuantity = items.find((el) => el.id === p.id);
+          if (itemQuantity) {
+            p.quantity = itemQuantity.quantity;
+          }
         });
       } catch (error) {
-        console.error('Ошибка парсинга избранных товаров(favorites):', error);
+        console.error('Ошибка парсинга товаров корзины(cart):', error);
       }
     }
   } catch (error) {
