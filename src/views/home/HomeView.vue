@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, computed } from 'vue';
-import ProductItem from '@/components/product/ProductItem.vue';
+import ProductItemCard from '@/components/product/ProductItemCard.vue';
 import { useProducts } from '@/stores/products';
 
 // data
@@ -14,6 +14,8 @@ const { getData } = productsStore;
 onMounted(async () => {
   try {
     await getData();
+
+    // TODO: Разобрать этот спагетти
     const favorites = localStorage.getItem('favorites');
     const carts = localStorage.getItem('cart');
     if (favorites || carts) {
@@ -55,7 +57,7 @@ onMounted(async () => {
     ></ProgressBar>
     <h1 class="my-3 mr-auto text-2xl font-bold sm:text-3xl md:text-4xl">Каталог</h1>
     <div class="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
-      <ProductItem v-for="product in products" :key="product.id" :item="product" />
+      <ProductItemCard v-for="product in products" :key="product.id" :item="product" />
     </div>
   </div>
 </template>

@@ -8,10 +8,15 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ProductItem: typeof import('./src/components/product/ProductItem.vue')['default']
+    Avatar: typeof import('primevue/avatar')['default']
+    Breadcrumb: typeof import('./src/components/Breadcrumb.vue')['default']
+    Fieldset: typeof import('primevue/fieldset')['default']
+    ProductItem: typeof import('./src/components/product/ProductItemCard.vue')['default']
+    ProductItemCard: typeof import('./src/components/product/ProductItemCard.vue')['default']
     ProgressBar: typeof import('primevue/progressbar')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheBreadcrumb: typeof import('./src/components/TheBreadcrumb.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
   }

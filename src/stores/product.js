@@ -6,8 +6,9 @@ export const useProduct = defineStore('product', () => {
   const pending = ref(true);
   const product = ref({});
 
-  const getData = async (id) => {
+  const getDataProduct = async (id) => {
     pending.value = true;
+    product.value = Object.keys(product.value).length && (product.value = {});
     try {
       product.value = await getProduct(id);
     } catch (error) {
@@ -17,7 +18,7 @@ export const useProduct = defineStore('product', () => {
     }
   };
 
-  return { pending, product, getData };
+  return { pending, product, getDataProduct };
 });
 
 if (import.meta.hot) {

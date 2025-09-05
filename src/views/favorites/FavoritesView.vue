@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import ProductItem from '@/components/product/ProductItem.vue';
+import ProductItem from '@/components/product/ProductItemCard.vue';
 import { useFavorites } from '@/stores/favoritesProducts';
 import Button from 'primevue/button';
 

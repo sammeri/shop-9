@@ -1,4 +1,4 @@
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { defineStore, acceptHMRUpdate } from 'pinia';
 import { useProducts } from './products';
 
@@ -9,13 +9,27 @@ export const useCart = defineStore('cart', () => {
   const productsCart = ref([]);
   const counter = computed(() => {
     let total = 0;
-
     productsCart.value.map((item) => {
       total = total + item.quantity;
     });
 
     return total;
   });
+
+  // восстановление из localStorage
+  const saved = localStorage.getItem('cart');
+  if (saved) {
+    productsCart.value = JSON.parse(saved);
+  }
+
+  watch(
+    productsCart,
+    (newCart) => {
+      localStorage.setItem('cart', JSON.stringify(newCart));
+    },
+    { deep: true },
+  );
+
   const checkFavorites = (productsArr) => {
     const favorites = localStorage.getItem('favorites');
     if (favorites) {
@@ -46,20 +60,21 @@ export const useCart = defineStore('cart', () => {
   };
 
   const addProduct = (item) => {
-    if (productsCart.value.find((el) => el.id === item.id)) {
-      const index = productsCart.value.findIndex((p) => p.id === item.id);
-
-      if (productsCart.value[index].quantity) {
-        productsCart.value[index].quantity < 10
-          ? productsCart.value[index].quantity++
-          : productsCart.value[index].quantity;
-      }
-    } else {
-      item.quantity = 1;
-      productsCart.value.push(item);
+    // item массив
+    if (Array.isArray(item)) {
+      item.forEach((product) => addProduct(product));
+      return;
     }
 
-    localStorage.setItem('cart', JSON.stringify(productsCart.value));
+    // item объект
+    const existing = productsCart.value.find((p) => p.id === item.id);
+    if (existing) {
+      if (existing.quantity < 10) {
+        existing.quantity++;
+      }
+    } else {
+      productsCart.value.push({ ...item, quantity: 1 });
+    }
   };
 
   const removeProduct = (item) => {
@@ -81,6 +96,24 @@ export const useCart = defineStore('cart', () => {
     }
   };
 
+  const addQuantityByID = (id) => {
+    const item = productsCart.value.find((el) => el.id === id);
+    if (item) {
+      item.quantity = Math.min(item.quantity + 1, 10);
+    }
+  };
+
+  const removeQuantityByID = (id) => {
+    const index = productsCart.value.findIndex((el) => el.id === id);
+    if (index === -1) return;
+
+    if (productsCart.value[index].quantity > 1) {
+      productsCart.value[index].quantity--;
+    } else {
+      productsCart.value.splice(index, 1);
+    }
+  };
+
   const addAllCart = async () => {
     const data = await getData();
 
@@ -93,7 +126,6 @@ export const useCart = defineStore('cart', () => {
 
   const removeAllCart = () => {
     productsCart.value = [];
-    localStorage.setItem('cart', JSON.stringify(productsCart.value));
   };
 
   return {
@@ -105,6 +137,8 @@ export const useCart = defineStore('cart', () => {
     removeProduct,
     addQuantity,
     removeQuantity,
+    addQuantityByID,
+    removeQuantityByID,
     addAllCart,
     removeAllCart,
   };
