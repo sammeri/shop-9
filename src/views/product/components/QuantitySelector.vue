@@ -53,7 +53,7 @@ const decrease = () => {
 
     <div
       v-if="quantity > 0"
-      class="quantity-selector flex h-9 h-full items-center border border-stone-800"
+      class="quantity-selector flex h-full items-center border border-stone-800"
     >
       <button
         @click="decrease"

@@ -5,12 +5,10 @@ import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useProduct } from '@/stores/product';
 import { useFavorites } from '@/stores/favoritesProducts';
-import { useCart } from '@/stores/cartProducts';
 import QuantitySelector from './components/QuantitySelector.vue';
 // data
 const productStore = useProduct();
 const favoritesStore = useFavorites();
-const cartStore = useCart();
 const route = useRoute();
 
 // computed
