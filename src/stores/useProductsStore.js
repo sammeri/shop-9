@@ -5,11 +5,13 @@ import { getProducts } from '@/api/products';
 export const useProducts = defineStore('products', () => {
   const pending = ref(true);
   const products = ref([]);
+  const isProducts = ref(false);
 
   const getData = async () => {
     pending.value = true;
     try {
       products.value = await getProducts();
+      isProducts.value = products.value.length > 0;
       return products.value;
     } catch (error) {
       console.log(error);
@@ -19,7 +21,7 @@ export const useProducts = defineStore('products', () => {
     }
   };
 
-  return { pending, products, getData };
+  return { pending, products, isProducts, getData };
 });
 
 if (import.meta.hot) {

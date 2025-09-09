@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import CartProduct from '@/views/cart/components/CartProduct.vue';
-import { useCart } from '@/stores/cartProducts';
+import { useCart } from '@/stores/useCartStore';
 // import { useFavorites } from '@/stores/favoritesProducts'
 import Button from 'primevue/button';
 
@@ -44,7 +44,8 @@ const num_word = (value, words) => {
     ></ProgressBar>
     <div class="my-3 flex w-full justify-between text-2xl">
       <h1 class="font-bold sm:text-3xl md:text-4xl">Корзина</h1>
-      <div class="flex gap-3">
+      <div class="relative flex gap-3 border-1 border-red-600 p-1">
+        <span class="absolute -top-3 bg-gray-100 text-sm font-bold text-red-600">debug</span>
         <button
           type="button"
           class="flex cursor-pointer items-center gap-1 text-amber-400 hover:text-amber-300"
@@ -75,9 +76,9 @@ const num_word = (value, words) => {
     </div>
     <div
       v-if="!pending && productsCart.length"
-      class="mb-4 grid w-full auto-rows-min grid-cols-6 grid-rows-subgrid gap-3"
+      class="grid-rows-auto mb-4 grid w-full grid-cols-6 gap-3"
     >
-      <div class="col-start-1 col-end-5 row-start-1 row-end-9 flex flex-col gap-3">
+      <div class="col-start-1 col-end-5 flex flex-col gap-3">
         <CartProduct
           v-for="(product, index) in productsCart"
           :key="product.id"
@@ -85,23 +86,25 @@ const num_word = (value, words) => {
           :index="index"
         />
       </div>
-      <div class="col-start-5 col-end-7 flex flex-col items-start gap-6 bg-white p-3">
-        <button
-          type="button"
-          class="font-barlow group relative inline-flex w-full cursor-pointer justify-center overflow-hidden bg-green-500 px-8 py-4 text-center text-base font-bold text-white uppercase outline-offset-4 transition-all duration-300 ease-in-out hover:bg-green-400 focus:outline-0 focus:outline-white active:outline-0"
-        >
-          <span class="relative z-20">Оформить заказ</span>
-          <span
-            class="absolute top-0 left-[-75%] z-10 h-full w-[20%] rotate-12 border-b-green-600 bg-green-300 blur-lg transition-all duration-800 ease-in-out group-hover:left-[125%]"
-          ></span>
-        </button>
-        <div class="flex w-full items-center justify-between">
-          <h3 class="text-2xl font-bold">Ваша корзина</h3>
-          <span class="text-lg"> {{ counter }} • {{ num_word(counter, productTextArr) }}</span>
-        </div>
-        <div class="flex w-full justify-between text-lg">
-          <span>Товары ({{ counter }})</span>
-          <span>{{ total }} $</span>
+      <div class="col-start-5 col-end-7 row-span-full min-h-100">
+        <div class="sticky top-28 z-10 flex min-h-60 w-full flex-col gap-6 bg-white p-3">
+          <button
+            type="button"
+            class="group relative inline-flex w-full cursor-pointer justify-center overflow-hidden bg-green-500 px-8 py-4 text-center text-base font-bold text-white uppercase outline-offset-4 transition-all duration-300 ease-in-out hover:bg-green-400 focus:outline-0 focus:outline-white active:outline-0"
+          >
+            <span class="relative z-20">Оформить заказ</span>
+            <span
+              class="absolute top-0 left-[-75%] z-10 h-full w-[20%] rotate-12 border-b-green-600 bg-green-300 blur-lg transition-all duration-800 ease-in-out group-hover:left-[125%]"
+            ></span>
+          </button>
+          <div class="flex w-full items-center justify-between">
+            <h3 class="text-2xl font-bold">Ваша корзина</h3>
+            <span class="text-lg"> {{ counter }} • {{ num_word(counter, productTextArr) }}</span>
+          </div>
+          <div class="flex w-full justify-between text-lg">
+            <span>Товары ({{ counter }})</span>
+            <span>{{ total }} $</span>
+          </div>
         </div>
       </div>
     </div>
@@ -114,14 +117,16 @@ const num_word = (value, words) => {
         Корзина пуста
         <p class="text-lg text-gray-500">Перейдите в каталог для поиска товаров</p>
       </span>
-      <Button severity="contrast" variant="outlined" class="group relative">
-        <router-link class="flex items-center gap-2" to="/">
-          <vue-feather
-            class="relative group-hover:left-1"
-            stroke="black"
-            type="arrow-right"
-          ></vue-feather>
-          В каталог
+      <Button severity="contrast" style="padding: 0" variant="outlined" class="group relative">
+        <router-link to="/">
+          <div class="inline-flex items-center gap-2 p-2">
+            <vue-feather
+              class="relative group-hover:left-1"
+              stroke="black"
+              type="arrow-right"
+            ></vue-feather>
+            В каталог
+          </div>
         </router-link>
       </Button>
     </div>

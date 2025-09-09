@@ -1,18 +1,43 @@
 <script setup>
-import { onMounted, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import ProductItemCard from '@/components/product/ProductItemCard.vue';
-import { useProducts } from '@/stores/products';
+import { useProducts } from '@/stores/useProductsStore';
+import { useCategories } from '@/stores/useCategoriesStore';
+import CategoryTabs from '@/components/CategoryTabs.vue';
+
+// state
+const activeCategory = ref('all');
 
 // data
 const productsStore = useProducts();
+const categoriesStore = useCategories();
+
 // computed
-const products = computed(() => productsStore.products);
 const pending = computed(() => productsStore.pending);
+const products = computed(() => productsStore.products);
+const allCategories = computed(() => categoriesStore.allCategories);
+const isProducts = computed(() => productsStore.isProducts);
+const isCategory = computed(() => categoriesStore.isCategory);
+
+const productList = computed(() => {
+  if (activeCategory.value === 'all') return products.value;
+  return products.value.filter(
+    (product) =>
+      product.category === activeCategory.value || product.subcategory === activeCategory.value,
+  );
+});
+
 // methods
 const { getData } = productsStore;
+const { getAllCategories } = categoriesStore;
+const setActiveCategory = (selectedCategory) => {
+  activeCategory.value = selectedCategory.slug;
+};
+
 //hooks
 onMounted(async () => {
   try {
+    await getAllCategories();
     await getData();
 
     // TODO: Разобрать этот спагетти
@@ -46,6 +71,7 @@ onMounted(async () => {
   }
 });
 </script>
+
 <template>
   <div class="container flex min-h-full flex-col items-center">
     <div v-show="!pending" style="height: 6px"></div>
@@ -55,9 +81,16 @@ onMounted(async () => {
       mode="indeterminate"
       style="height: 6px"
     ></ProgressBar>
-    <h1 class="my-3 mr-auto text-2xl font-bold sm:text-3xl md:text-4xl">Каталог</h1>
-    <div class="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
-      <ProductItemCard v-for="product in products" :key="product.id" :item="product" />
+    <div class="my-3 flex w-full justify-between">
+      <h1 class="text-2xl font-bold sm:text-3xl md:text-4xl">Каталог</h1>
+      <CategoryTabs
+        :items="allCategories"
+        @onCategoryClick="setActiveCategory"
+        v-if="isProducts && isCategory"
+      />
+    </div>
+    <div class="mb-4 grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+      <ProductItemCard v-for="product in productList" :key="product.id" :item="product" />
     </div>
   </div>
 </template>

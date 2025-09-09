@@ -1,6 +1,6 @@
 import { computed, ref, watch } from 'vue';
 import { defineStore, acceptHMRUpdate } from 'pinia';
-import { useProducts } from './products';
+import { useProducts } from './useProductsStore';
 
 export const useCart = defineStore('cart', () => {
   const productsStore = useProducts();
@@ -62,17 +62,21 @@ export const useCart = defineStore('cart', () => {
   const addProduct = (item) => {
     // item массив
     if (Array.isArray(item)) {
+      console.log(item);
+
       item.forEach((product) => addProduct(product));
       return;
     }
-
+    console.log(item);
     // item объект
     const existing = productsCart.value.find((p) => p.id === item.id);
+    console.log(existing);
     if (existing) {
       if (existing.quantity < 10) {
         existing.quantity++;
       }
     } else {
+      item.quantity = 1;
       productsCart.value.push({ ...item, quantity: 1 });
     }
   };

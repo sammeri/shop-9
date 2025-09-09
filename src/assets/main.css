@@ -1,5 +1,7 @@
 @import url('./fonts.css');
+@import url('./v-lazy.css');
 @import 'tailwindcss';
+@import 'primeicons/primeicons.css';
 
 /* @theme {
   --font-ptsans: "PT Sans", sans-serif;
@@ -28,13 +30,4 @@ input.quantity-input::-webkit-inner-spin-button {
 input[type='number'].quantity-input {
   appearance: textfield;
   -moz-appearance: textfield;
-}
-
-.v-lazy-image {
-  filter: blur(20px);
-  transition: filter 0.7s;
-}
-
-.v-lazy-image-loaded {
-  filter: blur(0);
 }

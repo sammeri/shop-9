@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
-import { useFavorites } from '@/stores/favoritesProducts';
-import { useCart } from '@/stores/cartProducts';
+import { useFavorites } from '@/stores/useFavoritesStore';
+import { useCart } from '@/stores/useCartStore';
 // import { useProducts } from '@/stores/products'
 // data
 // const productsStore = useProducts()

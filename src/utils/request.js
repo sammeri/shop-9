@@ -2,38 +2,58 @@ import axios from 'axios';
 
 const BASE_API = import.meta.env.VITE_BASE_API;
 
+console.log(import.meta.env.VITE_BASE_API);
+
 const service = axios.create({
   baseURL: BASE_API,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 /* Настройка всех запросов */
 service.interceptors.request.use(
   (config) => {
     const conf = config;
-    conf.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+
+    // Добавляем JWT, если есть
+    const token = localStorage.getItem('token');
+    if (token) {
+      conf.headers.Authorization = `Bearer ${token}`;
+    }
 
     return conf;
   },
   (error) => {
-    console.log(error);
-    Promise.reject(error);
+    console.error('Request error:', error);
+    return Promise.reject(error);
   },
 );
 
 /* Настройка всех ответов */
 service.interceptors.response.use(
-  (response) => {
-    const { data } = response;
-
-    return data;
-  },
+  (response) => response.data,
   (error) => {
-    /* 401, 403, 500 ... */
-    console.log(error);
-    if (error.status === 404) {
-      Promise.reject(new Error(`${error.status} - ресурса не существует`));
+    console.error('Response error:', error);
+
+    if (error.response) {
+      // Сервер вернул код ошибки
+      const status = error.response.status;
+
+      if (status === 401) {
+        return Promise.reject(new Error('Unauthorized. Токен невалиден или истёк.'));
+      }
+      if (status === 403) {
+        return Promise.reject(new Error('Forbidden. Нет доступа.'));
+      }
+      if (status === 404) {
+        return Promise.reject(new Error('404 - Ресурс не найден.'));
+      }
+      return Promise.reject(new Error(error.response.data?.message || 'Ошибка сервера'));
     }
-    Promise.reject(new Error(error));
+
+    // Нет ответа от сервера (сеть)
+    return Promise.reject(new Error('Нет ответа от сервера'));
   },
 );
 

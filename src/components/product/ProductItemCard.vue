@@ -1,9 +1,13 @@
 <script setup>
+import { ref, computed } from 'vue';
 import VLazyImage from 'v-lazy-image';
-import { useFavorites } from '@/stores/favoritesProducts';
-import { useCart } from '@/stores/cartProducts';
+import { useFavorites } from '@/stores/useFavoritesStore';
+import { useCart } from '@/stores/useCartStore';
 
-defineProps({
+const DEV_MODE = import.meta.env.DEV;
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '');
+
+const props = defineProps({
   item: {
     type: Object,
     default: null,
@@ -11,45 +15,126 @@ defineProps({
 });
 
 // data
+let leaveTimer = null;
+const activeIndex = ref(0);
 const favoritesStore = useFavorites();
 const cartStore = useCart();
+const images = computed(() => {
+  if (!props.item || !props.item.images) return [];
+  return props.item.images.map((img, index) => {
+    const currentUrl = DEV_MODE && img ? img : img.replace('/public', '');
+    return {
+      image: currentUrl ? `${BASE_URL}${currentUrl}` : '',
+      alt: `Product Image ${index + 1}`,
+      log: 'img',
+    };
+  });
+});
+
+const responsiveOptions = [
+  {
+    breakpoint: '1024px',
+    numVisible: 5,
+  },
+  {
+    breakpoint: '768px',
+    numVisible: 3,
+  },
+  {
+    breakpoint: '560px',
+    numVisible: 1,
+  },
+];
 // methods
 const { toggleFavorite } = favoritesStore;
 const { addProduct } = cartStore;
+
+function onContainerEnter() {
+  if (leaveTimer) {
+    clearTimeout(leaveTimer);
+    leaveTimer = null;
+  }
+}
+
+function onContainerLeave() {
+  leaveTimer = setTimeout(() => {
+    activeIndex.value = 0;
+    leaveTimer = null;
+  }, 100);
+}
 </script>
 
 <template>
   <router-link
     :to="`/product/${item.id}`"
-    class="group relative flex flex-col gap-0.5 duration-100 ease-in"
+    class="group relative flex flex-col overflow-hidden bg-white duration-100 ease-in"
   >
     <div
-      class="relative flex h-full flex-col justify-center gap-3 border border-gray-200 p-1 duration-100 ease-in group-hover:border-white group-hover:bg-white"
+      class="relative flex h-full flex-col justify-center border border-gray-200 duration-100 ease-in group-hover:border-white group-hover:bg-white"
     >
-      <vue-feather
+      <button
         @click.prevent="toggleFavorite(item)"
-        class="[&>svg]:ease absolute top-0 right-0 z-10 cursor-pointer p-2 pt-1 pr-1 [&>svg]:transition-all [&>svg]:duration-300"
-        :class="[item.isFavorite ? '[&>svg]:fill-red-500' : '[&>svg]:fill-white']"
-        :stroke-width="item.isFavorite ? '0' : '2'"
-        type="heart"
-      ></vue-feather>
+        class="absolute top-0 right-0 z-30 flex cursor-pointer p-2 pt-1 pr-1"
+      >
+        <vue-feather
+          class="[&>svg]:ease cursor-pointer [&>svg]:transition-all [&>svg]:duration-300"
+          :class="[item.isFavorite ? '[&>svg]:fill-red-500' : '[&>svg]:fill-white']"
+          :stroke-width="item.isFavorite ? '0' : '2'"
+          type="heart"
+        ></vue-feather>
+      </button>
+      <div v-if="images.length > 0" class="h-auto min-h-80 grow overflow-hidden">
+        <Galleria
+          v-memo="[activeIndex]"
+          v-model:activeIndex="activeIndex"
+          unstyled
+          :value="images"
+          :responsiveOptions="responsiveOptions"
+          :numVisible="5"
+          :showThumbnails="false"
+          :showIndicators="true"
+          :changeItemOnIndicatorHover="true"
+          :showIndicatorsOnItem="true"
+          indicatorsPosition="top"
+          :pt="{
+            root: 'relative flex w-full',
+            content: 'w-full',
+            items: 'flex w-full  overflow-hidden items-center',
+            itemscontainer: 'w-full',
+            item: 'flex w-full h-90 max-h-90 justify-center items-center',
+            indicatorlist: 'flex absolute h-full w-full top-0',
+            indicator: 'relative z-20 flex-auto',
+            thumbnail: 'absolute',
+          }"
+        >
+          <template #item="slotProps">
+            <v-lazy-image
+              v-if="slotProps.item?.image"
+              class="relative z-20 h-full min-h-full w-full max-w-full object-contain"
+              :src="slotProps.item.image"
+              :alt="slotProps.item.alt"
+            />
+          </template>
 
-      <div class="relative flex flex-col justify-center">
-        <v-lazy-image
-          src-placeholder="https://placehold.co/600x400"
-          class="h-60 w-auto object-contain"
-          :src="item.image"
-          alt="Product Image"
-        />
+          <template #indicator>
+            <div
+              class="absolute top-0 flex h-full w-full"
+              @mouseenter="onContainerEnter"
+              @mouseleave="onContainerLeave"
+            ></div>
+          </template>
+        </Galleria>
+      </div>
+      <div class="absolute bottom-11 left-0 flex w-full flex-col justify-center">
         <button
           type="button"
-          class="absolute bottom-0 w-full cursor-pointer bg-gray-400/80 p-2 text-white opacity-0 duration-200 group-hover:opacity-100 hover:bg-gray-400/90"
+          class="absolute bottom-0 z-30 w-full cursor-pointer bg-gray-400/80 p-2 text-white opacity-0 duration-200 group-hover:opacity-100 hover:bg-gray-400/90"
         >
           Быстрый просмотр
         </button>
       </div>
 
-      <span :title="item.title" class="line-clamp-1 text-xl leading-6 text-clip">
+      <span :title="item.title" class="line-clamp-1 p-1 text-xl leading-6 text-clip">
         {{ item.title }}
       </span>
     </div>

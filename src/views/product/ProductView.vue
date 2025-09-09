@@ -1,19 +1,51 @@
 <script setup>
+import { ref } from 'vue';
 import VLazyImage from 'v-lazy-image';
 import Fieldset from 'primevue/fieldset';
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { useProduct } from '@/stores/product';
-import { useFavorites } from '@/stores/favoritesProducts';
+import { useProduct } from '@/stores/useProductStore';
+import { useFavorites } from '@/stores/useFavoritesStore';
 import QuantitySelector from './components/QuantitySelector.vue';
+
+const DEV_MODE = import.meta.env.DEV;
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '');
+
 // data
 const productStore = useProduct();
 const favoritesStore = useFavorites();
 const route = useRoute();
-
+const activeIndex = ref(0);
+const displayBasic = ref(false);
 // computed
 const product = computed(() => productStore.product);
 const pending = computed(() => productStore.pending);
+const images = computed(() => {
+  if (!product.value || !product.value.images) return [];
+  return product.value.images.map((img, index) => {
+    const currentUrl = DEV_MODE && img ? img : img.replace('/public', '');
+    return {
+      image: currentUrl ? `${BASE_URL}${currentUrl}` : '',
+      alt: `Product Image ${index + 1}`,
+      log: 'img',
+    };
+  });
+});
+
+const responsiveOptions = [
+  {
+    breakpoint: '1024px',
+    numVisible: 5,
+  },
+  {
+    breakpoint: '768px',
+    numVisible: 3,
+  },
+  {
+    breakpoint: '560px',
+    numVisible: 1,
+  },
+];
 
 // methods
 const { getDataProduct } = productStore;
@@ -43,9 +75,40 @@ onMounted(async () => {
       style="height: 6px"
     ></ProgressBar>
 
-    <div v-else class="my-10 flex w-full justify-between gap-60">
-      <v-lazy-image :src="product.image" alt="Product Image" />
+    <div v-else class="my-10 flex w-full justify-between gap-20">
+      <!-- <v-lazy-image :src="product.image" alt="Product Image" /> -->
+      <div v-if="images.length > 0" class="grow">
+        <Galleria
+          v-model:activeIndex="activeIndex"
+          :value="images"
+          :responsiveOptions="responsiveOptions"
+          :numVisible="5"
+          :thumbnailsPosition="'right'"
+        >
+          <template #item="slotProps">
+            <button class="cursor-pointer" @click="displayBasic = true">
+              <v-lazy-image
+                v-if="slotProps.item?.image"
+                class="h-full w-full object-contain"
+                :src="slotProps.item.image"
+                :alt="slotProps.item.alt"
+              />
+            </button>
+          </template>
 
+          <template #thumbnail="slotProps">
+            <v-lazy-image
+              v-if="slotProps.item?.image"
+              class="h-20 w-auto object-contain"
+              :src="slotProps.item.image"
+              :alt="slotProps.item.alt"
+            />
+          </template>
+        </Galleria>
+      </div>
+      <div v-else>
+        <p>Изображений нет :(</p>
+      </div>
       <div class="flex w-1/2 flex-col gap-3 bg-gray-50 p-2">
         <div class="flex items-center justify-between">
           <h1 class="text-4xl font-bold">{{ product.title }}</h1>
@@ -81,6 +144,38 @@ onMounted(async () => {
         </div>
       </div>
     </div>
+    <Galleria
+      v-model:activeIndex="activeIndex"
+      v-model:visible="displayBasic"
+      :value="images"
+      :responsiveOptions="responsiveOptions"
+      :numVisible="5"
+      :circular="true"
+      :fullScreen="true"
+      :showItemNavigators="true"
+      :maskClass="'bg-black'"
+      unstyled
+      :pt="{
+        mask: 'bg-black',
+      }"
+    >
+      <template #item="slotProps">
+        <v-lazy-image
+          v-if="slotProps.item?.image"
+          class="h-full max-h-dvh w-full object-contain"
+          :src="slotProps.item.image"
+          :alt="slotProps.item.alt"
+        />
+      </template>
+      <template #thumbnail="slotProps">
+        <v-lazy-image
+          v-if="slotProps.item?.image"
+          class="h-20 w-auto object-contain"
+          :src="slotProps.item.image"
+          :alt="slotProps.item.alt"
+        />
+      </template>
+    </Galleria>
   </div>
 </template>
 

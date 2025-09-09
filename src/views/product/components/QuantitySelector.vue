@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { useCart } from '@/stores/cartProducts';
+import { useCart } from '@/stores/useCartStore';
 
 // data
 const props = defineProps({

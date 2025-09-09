@@ -1,0 +1,1855 @@
+[
+  {
+    "id": 1,
+    "slug": "art-1",
+    "title": "art 1",
+    "description": "Описание art 1",
+    "price": 20.94,
+    "images": [
+      "/public/images/products/art/1.webp",
+      "/public/images/products/art/1-2.webp",
+      "/public/images/products/art/1-3.webp",
+      "/public/images/products/art/1-4.webp",
+      "/public/images/products/art/1-5.webp",
+      "/public/images/products/art/1-6.webp"
+    ],
+    "stock": 163,
+    "rating": {
+      "rate": 0.2,
+      "count": 277
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "art-2",
+    "title": "art 2",
+    "description": "Описание art 2",
+    "price": 10.78,
+    "images": [
+      "/public/images/products/art/2.webp",
+      "/public/images/products/art/2-2.webp",
+      "/public/images/products/art/2-3.webp",
+      "/public/images/products/art/2-4.webp",
+      "/public/images/products/art/2-5.webp",
+      "/public/images/products/art/2-6.webp"
+    ],
+    "stock": 81,
+    "rating": {
+      "rate": 4.1,
+      "count": 360
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "art-3",
+    "title": "art 3",
+    "description": "Описание art 3",
+    "price": 28.59,
+    "images": [
+      "/public/images/products/art/3.webp",
+      "/public/images/products/art/3-2.webp",
+      "/public/images/products/art/3-3.webp",
+      "/public/images/products/art/3-4.webp",
+      "/public/images/products/art/3-5.webp",
+      "/public/images/products/art/3-6.webp"
+    ],
+    "stock": 14,
+    "rating": {
+      "rate": 0.4,
+      "count": 272
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "art-4",
+    "title": "art 4",
+    "description": "Описание art 4",
+    "price": 11.18,
+    "images": [
+      "/public/images/products/art/4.webp",
+      "/public/images/products/art/4-2.webp",
+      "/public/images/products/art/4-3.webp",
+      "/public/images/products/art/4-4.webp"
+    ],
+    "stock": 4,
+    "rating": {
+      "rate": 4.9,
+      "count": 86
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "art-5",
+    "title": "art 5",
+    "description": "Описание art 5",
+    "price": 23.71,
+    "images": [
+      "/public/images/products/art/5.webp",
+      "/public/images/products/art/5-2.webp",
+      "/public/images/products/art/5-3.webp",
+      "/public/images/products/art/5-4.webp"
+    ],
+    "stock": 47,
+    "rating": {
+      "rate": 4.2,
+      "count": 73
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "art-6",
+    "title": "art 6",
+    "description": "Описание art 6",
+    "price": 11.92,
+    "images": [
+      "/public/images/products/art/6.webp",
+      "/public/images/products/art/6-2.webp"
+    ],
+    "stock": 132,
+    "rating": {
+      "rate": 1.6,
+      "count": 242
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "art-7",
+    "title": "art 7",
+    "description": "Описание art 7",
+    "price": 11.01,
+    "images": [
+      "/public/images/products/art/7.webp",
+      "/public/images/products/art/7-2.webp",
+      "/public/images/products/art/7-3.webp",
+      "/public/images/products/art/7-4.webp"
+    ],
+    "stock": 173,
+    "rating": {
+      "rate": 0.8,
+      "count": 423
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "art-8",
+    "title": "art 8",
+    "description": "Описание art 8",
+    "price": 12.82,
+    "images": [
+      "/public/images/products/art/8.webp",
+      "/public/images/products/art/8-2.webp"
+    ],
+    "stock": 22,
+    "rating": {
+      "rate": 0.9,
+      "count": 430
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "art",
+    "subcategory": null,
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "hoodie-1",
+    "title": "hoodie 1",
+    "description": "Описание hoodie 1",
+    "price": 27.12,
+    "images": [
+      "/public/images/products/clothing/hoodie/1.webp",
+      "/public/images/products/clothing/hoodie/1-2.webp",
+      "/public/images/products/clothing/hoodie/1-3.webp",
+      "/public/images/products/clothing/hoodie/1-4.webp"
+    ],
+    "stock": 146,
+    "rating": {
+      "rate": 0.8,
+      "count": 61
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "hoodie-2",
+    "title": "hoodie 2",
+    "description": "Описание hoodie 2",
+    "price": 19.07,
+    "images": [
+      "/public/images/products/clothing/hoodie/2.webp",
+      "/public/images/products/clothing/hoodie/2-1.webp"
+    ],
+    "stock": 130,
+    "rating": {
+      "rate": 3.8,
+      "count": 414
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "hoodie-3",
+    "title": "hoodie 3",
+    "description": "Описание hoodie 3",
+    "price": 17.05,
+    "images": [
+      "/public/images/products/clothing/hoodie/3.webp",
+      "/public/images/products/clothing/hoodie/3-2.webp",
+      "/public/images/products/clothing/hoodie/3-3.webp",
+      "/public/images/products/clothing/hoodie/3-4.webp"
+    ],
+    "stock": 20,
+    "rating": {
+      "rate": 4.4,
+      "count": 369
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "hoodie-4",
+    "title": "hoodie 4",
+    "description": "Описание hoodie 4",
+    "price": 12.86,
+    "images": [
+      "/public/images/products/clothing/hoodie/4.webp",
+      "/public/images/products/clothing/hoodie/4-2.webp",
+      "/public/images/products/clothing/hoodie/4-3.webp",
+      "/public/images/products/clothing/hoodie/4-4.webp"
+    ],
+    "stock": 76,
+    "rating": {
+      "rate": 4.8,
+      "count": 253
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "hoodie-5",
+    "title": "hoodie 5",
+    "description": "Описание hoodie 5",
+    "price": 25.18,
+    "images": [
+      "/public/images/products/clothing/hoodie/5.webp",
+      "/public/images/products/clothing/hoodie/5-2.webp",
+      "/public/images/products/clothing/hoodie/5-3.webp",
+      "/public/images/products/clothing/hoodie/5-4.webp",
+      "/public/images/products/clothing/hoodie/5-5.webp",
+      "/public/images/products/clothing/hoodie/5-6.webp"
+    ],
+    "stock": 128,
+    "rating": {
+      "rate": 1.6,
+      "count": 330
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "hoodie-6",
+    "title": "hoodie 6",
+    "description": "Описание hoodie 6",
+    "price": 29.5,
+    "images": [
+      "/public/images/products/clothing/hoodie/6.webp",
+      "/public/images/products/clothing/hoodie/6-2.webp",
+      "/public/images/products/clothing/hoodie/6-3.webp",
+      "/public/images/products/clothing/hoodie/6-4.webp",
+      "/public/images/products/clothing/hoodie/6-5.webp"
+    ],
+    "stock": 81,
+    "rating": {
+      "rate": 3.2,
+      "count": 254
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "hoodie-7",
+    "title": "hoodie 7",
+    "description": "Описание hoodie 7",
+    "price": 11.37,
+    "images": [
+      "/public/images/products/clothing/hoodie/7.webp",
+      "/public/images/products/clothing/hoodie/7-2.webp",
+      "/public/images/products/clothing/hoodie/7-3.webp"
+    ],
+    "stock": 172,
+    "rating": {
+      "rate": 0.3,
+      "count": 303
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "hoodie-8",
+    "title": "hoodie 8",
+    "description": "Описание hoodie 8",
+    "price": 22.48,
+    "images": [
+      "/public/images/products/clothing/hoodie/8.webp",
+      "/public/images/products/clothing/hoodie/8-2.webp",
+      "/public/images/products/clothing/hoodie/8-3.webp",
+      "/public/images/products/clothing/hoodie/8-4.webp",
+      "/public/images/products/clothing/hoodie/8-5.webp",
+      "/public/images/products/clothing/hoodie/8-6.webp",
+      "/public/images/products/clothing/hoodie/8-7.webp",
+      "/public/images/products/clothing/hoodie/8-8.webp"
+    ],
+    "stock": 122,
+    "rating": {
+      "rate": 4.8,
+      "count": 472
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "hoodie-9",
+    "title": "hoodie 9",
+    "description": "Описание hoodie 9",
+    "price": 26.16,
+    "images": [
+      "/public/images/products/clothing/hoodie/9.webp",
+      "/public/images/products/clothing/hoodie/9-2.webp",
+      "/public/images/products/clothing/hoodie/9-3.webp",
+      "/public/images/products/clothing/hoodie/9-4.webp",
+      "/public/images/products/clothing/hoodie/9-5.webp",
+      "/public/images/products/clothing/hoodie/9-6.webp"
+    ],
+    "stock": 13,
+    "rating": {
+      "rate": 2.9,
+      "count": 398
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "hoodie",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "sneakers-1",
+    "title": "sneakers 1",
+    "description": "Описание sneakers 1",
+    "price": 10.95,
+    "images": [
+      "/public/images/products/clothing/sneakers/1.jpg"
+    ],
+    "stock": 94,
+    "rating": {
+      "rate": 1.2,
+      "count": 413
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "sneakers-2",
+    "title": "sneakers 2",
+    "description": "Описание sneakers 2",
+    "price": 29.91,
+    "images": [
+      "/public/images/products/clothing/sneakers/2.jpg"
+    ],
+    "stock": 9,
+    "rating": {
+      "rate": 4.6,
+      "count": 470
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "sneakers-3",
+    "title": "sneakers 3",
+    "description": "Описание sneakers 3",
+    "price": 29.28,
+    "images": [
+      "/public/images/products/clothing/sneakers/3.jpg"
+    ],
+    "stock": 76,
+    "rating": {
+      "rate": 2.2,
+      "count": 359
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "sneakers-4",
+    "title": "sneakers 4",
+    "description": "Описание sneakers 4",
+    "price": 15.26,
+    "images": [
+      "/public/images/products/clothing/sneakers/4.jpg"
+    ],
+    "stock": 114,
+    "rating": {
+      "rate": 4.2,
+      "count": 90
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "sneakers-5",
+    "title": "sneakers 5",
+    "description": "Описание sneakers 5",
+    "price": 15.55,
+    "images": [
+      "/public/images/products/clothing/sneakers/5.jpg"
+    ],
+    "stock": 41,
+    "rating": {
+      "rate": 3.7,
+      "count": 135
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 23,
+    "slug": "sneakers-6",
+    "title": "sneakers 6",
+    "description": "Описание sneakers 6",
+    "price": 19.41,
+    "images": [
+      "/public/images/products/clothing/sneakers/6.jpg"
+    ],
+    "stock": 132,
+    "rating": {
+      "rate": 0.9,
+      "count": 167
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 24,
+    "slug": "sneakers-7",
+    "title": "sneakers 7",
+    "description": "Описание sneakers 7",
+    "price": 15.77,
+    "images": [
+      "/public/images/products/clothing/sneakers/7.jpg"
+    ],
+    "stock": 90,
+    "rating": {
+      "rate": 3.4,
+      "count": 4
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 25,
+    "slug": "sneakers-8",
+    "title": "sneakers 8",
+    "description": "Описание sneakers 8",
+    "price": 18.53,
+    "images": [
+      "/public/images/products/clothing/sneakers/8.jpg"
+    ],
+    "stock": 117,
+    "rating": {
+      "rate": 3.7,
+      "count": 260
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 26,
+    "slug": "sneakers-9",
+    "title": "sneakers 9",
+    "description": "Описание sneakers 9",
+    "price": 15.85,
+    "images": [
+      "/public/images/products/clothing/sneakers/9.jpg"
+    ],
+    "stock": 160,
+    "rating": {
+      "rate": 3.2,
+      "count": 366
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 27,
+    "slug": "sneakers-10",
+    "title": "sneakers 10",
+    "description": "Описание sneakers 10",
+    "price": 10.55,
+    "images": [
+      "/public/images/products/clothing/sneakers/10.jpg"
+    ],
+    "stock": 186,
+    "rating": {
+      "rate": 3.2,
+      "count": 20
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "sneakers-11",
+    "title": "sneakers 11",
+    "description": "Описание sneakers 11",
+    "price": 22.53,
+    "images": [
+      "/public/images/products/clothing/sneakers/11.jpg"
+    ],
+    "stock": 67,
+    "rating": {
+      "rate": 4.5,
+      "count": 470
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 29,
+    "slug": "sneakers-12",
+    "title": "sneakers 12",
+    "description": "Описание sneakers 12",
+    "price": 21.7,
+    "images": [
+      "/public/images/products/clothing/sneakers/12.jpg"
+    ],
+    "stock": 97,
+    "rating": {
+      "rate": 0.8,
+      "count": 224
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "sneakers",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 30,
+    "slug": "t-shirts-1",
+    "title": "t-shirts 1",
+    "description": "Описание t-shirts 1",
+    "price": 26.1,
+    "images": [
+      "/public/images/products/clothing/t-shirts/1.webp",
+      "/public/images/products/clothing/t-shirts/1-2.webp",
+      "/public/images/products/clothing/t-shirts/1-3.webp",
+      "/public/images/products/clothing/t-shirts/1-4.webp",
+      "/public/images/products/clothing/t-shirts/1-5.webp"
+    ],
+    "stock": 68,
+    "rating": {
+      "rate": 0.6,
+      "count": 107
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 31,
+    "slug": "t-shirts-2",
+    "title": "t-shirts 2",
+    "description": "Описание t-shirts 2",
+    "price": 27.81,
+    "images": [
+      "/public/images/products/clothing/t-shirts/2.webp",
+      "/public/images/products/clothing/t-shirts/2-2.webp",
+      "/public/images/products/clothing/t-shirts/2-3.webp",
+      "/public/images/products/clothing/t-shirts/2-4.webp",
+      "/public/images/products/clothing/t-shirts/2-5.webp"
+    ],
+    "stock": 7,
+    "rating": {
+      "rate": 2.3,
+      "count": 349
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 32,
+    "slug": "t-shirts-3",
+    "title": "t-shirts 3",
+    "description": "Описание t-shirts 3",
+    "price": 11.54,
+    "images": [
+      "/public/images/products/clothing/t-shirts/3.webp",
+      "/public/images/products/clothing/t-shirts/3-2.webp",
+      "/public/images/products/clothing/t-shirts/3-3.webp",
+      "/public/images/products/clothing/t-shirts/3-4.webp",
+      "/public/images/products/clothing/t-shirts/3-5.webp"
+    ],
+    "stock": 7,
+    "rating": {
+      "rate": 2.9,
+      "count": 52
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 33,
+    "slug": "t-shirts-4",
+    "title": "t-shirts 4",
+    "description": "Описание t-shirts 4",
+    "price": 23.98,
+    "images": [
+      "/public/images/products/clothing/t-shirts/4.webp",
+      "/public/images/products/clothing/t-shirts/4-2.webp",
+      "/public/images/products/clothing/t-shirts/4-3.webp",
+      "/public/images/products/clothing/t-shirts/4-4.webp",
+      "/public/images/products/clothing/t-shirts/4-5.webp"
+    ],
+    "stock": 54,
+    "rating": {
+      "rate": 0.9,
+      "count": 327
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "t-shirts-5",
+    "title": "t-shirts 5",
+    "description": "Описание t-shirts 5",
+    "price": 20.89,
+    "images": [
+      "/public/images/products/clothing/t-shirts/5.webp",
+      "/public/images/products/clothing/t-shirts/5-2.webp",
+      "/public/images/products/clothing/t-shirts/5-3.webp",
+      "/public/images/products/clothing/t-shirts/5-4.webp",
+      "/public/images/products/clothing/t-shirts/5-5.webp"
+    ],
+    "stock": 124,
+    "rating": {
+      "rate": 2.7,
+      "count": 47
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 35,
+    "slug": "t-shirts-6",
+    "title": "t-shirts 6",
+    "description": "Описание t-shirts 6",
+    "price": 23.81,
+    "images": [
+      "/public/images/products/clothing/t-shirts/6.webp",
+      "/public/images/products/clothing/t-shirts/6-2.webp",
+      "/public/images/products/clothing/t-shirts/6-3.webp",
+      "/public/images/products/clothing/t-shirts/6-4.webp",
+      "/public/images/products/clothing/t-shirts/6-5.webp"
+    ],
+    "stock": 166,
+    "rating": {
+      "rate": 1.9,
+      "count": 192
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 36,
+    "slug": "t-shirts-7",
+    "title": "t-shirts 7",
+    "description": "Описание t-shirts 7",
+    "price": 26.24,
+    "images": [
+      "/public/images/products/clothing/t-shirts/7.webp",
+      "/public/images/products/clothing/t-shirts/7-2.webp",
+      "/public/images/products/clothing/t-shirts/7-3.webp",
+      "/public/images/products/clothing/t-shirts/7-4.webp",
+      "/public/images/products/clothing/t-shirts/7-5.webp"
+    ],
+    "stock": 164,
+    "rating": {
+      "rate": 0.9,
+      "count": 384
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 37,
+    "slug": "t-shirts-8",
+    "title": "t-shirts 8",
+    "description": "Описание t-shirts 8",
+    "price": 22.84,
+    "images": [
+      "/public/images/products/clothing/t-shirts/8.webp",
+      "/public/images/products/clothing/t-shirts/8-2.webp",
+      "/public/images/products/clothing/t-shirts/8-3.webp",
+      "/public/images/products/clothing/t-shirts/8-4.webp",
+      "/public/images/products/clothing/t-shirts/8-5.webp",
+      "/public/images/products/clothing/t-shirts/8-6.webp"
+    ],
+    "stock": 33,
+    "rating": {
+      "rate": 4.9,
+      "count": 180
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 38,
+    "slug": "t-shirts-9",
+    "title": "t-shirts 9",
+    "description": "Описание t-shirts 9",
+    "price": 24,
+    "images": [
+      "/public/images/products/clothing/t-shirts/9.webp",
+      "/public/images/products/clothing/t-shirts/9-2.webp",
+      "/public/images/products/clothing/t-shirts/9-3.webp",
+      "/public/images/products/clothing/t-shirts/9-4.webp",
+      "/public/images/products/clothing/t-shirts/9-5.webp",
+      "/public/images/products/clothing/t-shirts/9-6.webp"
+    ],
+    "stock": 26,
+    "rating": {
+      "rate": 0.3,
+      "count": 79
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 39,
+    "slug": "t-shirts-10",
+    "title": "t-shirts 10",
+    "description": "Описание t-shirts 10",
+    "price": 23.69,
+    "images": [
+      "/public/images/products/clothing/t-shirts/10.webp",
+      "/public/images/products/clothing/t-shirts/10-2.webp",
+      "/public/images/products/clothing/t-shirts/10-3.webp",
+      "/public/images/products/clothing/t-shirts/10-4.webp"
+    ],
+    "stock": 19,
+    "rating": {
+      "rate": 0.7,
+      "count": 64
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 40,
+    "slug": "t-shirts-11",
+    "title": "t-shirts 11",
+    "description": "Описание t-shirts 11",
+    "price": 22.21,
+    "images": [
+      "/public/images/products/clothing/t-shirts/11.webp",
+      "/public/images/products/clothing/t-shirts/11-2.webp",
+      "/public/images/products/clothing/t-shirts/11-3.webp"
+    ],
+    "stock": 51,
+    "rating": {
+      "rate": 1.7,
+      "count": 277
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 41,
+    "slug": "t-shirts-12",
+    "title": "t-shirts 12",
+    "description": "Описание t-shirts 12",
+    "price": 22.69,
+    "images": [
+      "/public/images/products/clothing/t-shirts/12.webp",
+      "/public/images/products/clothing/t-shirts/12-2.webp",
+      "/public/images/products/clothing/t-shirts/12-3.webp"
+    ],
+    "stock": 162,
+    "rating": {
+      "rate": 3.8,
+      "count": 377
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 42,
+    "slug": "t-shirts-13",
+    "title": "t-shirts 13",
+    "description": "Описание t-shirts 13",
+    "price": 13.74,
+    "images": [
+      "/public/images/products/clothing/t-shirts/13.webp",
+      "/public/images/products/clothing/t-shirts/13-2.webp",
+      "/public/images/products/clothing/t-shirts/13-3.webp",
+      "/public/images/products/clothing/t-shirts/13-4.webp",
+      "/public/images/products/clothing/t-shirts/13-5.webp"
+    ],
+    "stock": 9,
+    "rating": {
+      "rate": 3,
+      "count": 317
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "clothing",
+    "subcategory": "t-shirts",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 43,
+    "slug": "laptops-1",
+    "title": "laptops 1",
+    "description": "Описание laptops 1",
+    "price": 14.05,
+    "images": [
+      "/public/images/products/electronics/laptops/1.webp",
+      "/public/images/products/electronics/laptops/1-2.webp",
+      "/public/images/products/electronics/laptops/1-3.webp",
+      "/public/images/products/electronics/laptops/1-4.webp"
+    ],
+    "stock": 111,
+    "rating": {
+      "rate": 3.9,
+      "count": 308
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 44,
+    "slug": "laptops-2",
+    "title": "laptops 2",
+    "description": "Описание laptops 2",
+    "price": 11.08,
+    "images": [
+      "/public/images/products/electronics/laptops/2.webp",
+      "/public/images/products/electronics/laptops/2-2.webp",
+      "/public/images/products/electronics/laptops/2-3.webp",
+      "/public/images/products/electronics/laptops/2-4.webp"
+    ],
+    "stock": 84,
+    "rating": {
+      "rate": 1.3,
+      "count": 419
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 45,
+    "slug": "laptops-3",
+    "title": "laptops 3",
+    "description": "Описание laptops 3",
+    "price": 16.17,
+    "images": [
+      "/public/images/products/electronics/laptops/3.webp",
+      "/public/images/products/electronics/laptops/3-2.webp",
+      "/public/images/products/electronics/laptops/3-3.webp",
+      "/public/images/products/electronics/laptops/3-4.webp"
+    ],
+    "stock": 43,
+    "rating": {
+      "rate": 1.4,
+      "count": 352
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 46,
+    "slug": "laptops-4",
+    "title": "laptops 4",
+    "description": "Описание laptops 4",
+    "price": 17.59,
+    "images": [
+      "/public/images/products/electronics/laptops/4.webp",
+      "/public/images/products/electronics/laptops/4-2.webp",
+      "/public/images/products/electronics/laptops/4-3.webp",
+      "/public/images/products/electronics/laptops/4-4.webp"
+    ],
+    "stock": 51,
+    "rating": {
+      "rate": 3.1,
+      "count": 164
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 47,
+    "slug": "laptops-5",
+    "title": "laptops 5",
+    "description": "Описание laptops 5",
+    "price": 12.53,
+    "images": [
+      "/public/images/products/electronics/laptops/5.webp",
+      "/public/images/products/electronics/laptops/5-2.webp",
+      "/public/images/products/electronics/laptops/5-3.webp",
+      "/public/images/products/electronics/laptops/5-4.webp"
+    ],
+    "stock": 87,
+    "rating": {
+      "rate": 1.8,
+      "count": 328
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 48,
+    "slug": "laptops-6",
+    "title": "laptops 6",
+    "description": "Описание laptops 6",
+    "price": 19.06,
+    "images": [
+      "/public/images/products/electronics/laptops/6.webp",
+      "/public/images/products/electronics/laptops/6-2.webp",
+      "/public/images/products/electronics/laptops/6-3.webp",
+      "/public/images/products/electronics/laptops/6-4.webp"
+    ],
+    "stock": 184,
+    "rating": {
+      "rate": 4.7,
+      "count": 70
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 49,
+    "slug": "laptops-7",
+    "title": "laptops 7",
+    "description": "Описание laptops 7",
+    "price": 20.97,
+    "images": [
+      "/public/images/products/electronics/laptops/7.webp",
+      "/public/images/products/electronics/laptops/7-2.webp",
+      "/public/images/products/electronics/laptops/7-3.webp",
+      "/public/images/products/electronics/laptops/7-4.webp"
+    ],
+    "stock": 148,
+    "rating": {
+      "rate": 1.3,
+      "count": 166
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 50,
+    "slug": "laptops-8",
+    "title": "laptops 8",
+    "description": "Описание laptops 8",
+    "price": 11.68,
+    "images": [
+      "/public/images/products/electronics/laptops/8.webp",
+      "/public/images/products/electronics/laptops/8-2.webp",
+      "/public/images/products/electronics/laptops/8-3.webp",
+      "/public/images/products/electronics/laptops/8-4.webp"
+    ],
+    "stock": 5,
+    "rating": {
+      "rate": 3.5,
+      "count": 62
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "laptops",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 51,
+    "slug": "monitors-1",
+    "title": "monitors 1",
+    "description": "Описание monitors 1",
+    "price": 19.38,
+    "images": [
+      "/public/images/products/electronics/monitors/1.webp",
+      "/public/images/products/electronics/monitors/1-2.webp",
+      "/public/images/products/electronics/monitors/1-3.webp",
+      "/public/images/products/electronics/monitors/1-4.webp"
+    ],
+    "stock": 147,
+    "rating": {
+      "rate": 3.6,
+      "count": 121
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "monitors",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 52,
+    "slug": "monitors-2",
+    "title": "monitors 2",
+    "description": "Описание monitors 2",
+    "price": 11.63,
+    "images": [
+      "/public/images/products/electronics/monitors/2.webp",
+      "/public/images/products/electronics/monitors/2-2.webp",
+      "/public/images/products/electronics/monitors/2-3.webp",
+      "/public/images/products/electronics/monitors/2-4.webp",
+      "/public/images/products/electronics/monitors/2-5.webp"
+    ],
+    "stock": 103,
+    "rating": {
+      "rate": 1.8,
+      "count": 248
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "monitors",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 53,
+    "slug": "monitors-3",
+    "title": "monitors 3",
+    "description": "Описание monitors 3",
+    "price": 20.34,
+    "images": [
+      "/public/images/products/electronics/monitors/3.webp",
+      "/public/images/products/electronics/monitors/3-2.webp",
+      "/public/images/products/electronics/monitors/3-3.webp",
+      "/public/images/products/electronics/monitors/3-4.webp",
+      "/public/images/products/electronics/monitors/3-5.webp"
+    ],
+    "stock": 73,
+    "rating": {
+      "rate": 2.3,
+      "count": 396
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "monitors",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 54,
+    "slug": "monitors-4",
+    "title": "monitors 4",
+    "description": "Описание monitors 4",
+    "price": 18.9,
+    "images": [
+      "/public/images/products/electronics/monitors/4.webp",
+      "/public/images/products/electronics/monitors/4-2.webp",
+      "/public/images/products/electronics/monitors/4-3.webp",
+      "/public/images/products/electronics/monitors/4-4.webp",
+      "/public/images/products/electronics/monitors/4-5.webp"
+    ],
+    "stock": 157,
+    "rating": {
+      "rate": 4.9,
+      "count": 126
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "monitors",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 55,
+    "slug": "monitors-5",
+    "title": "monitors 5",
+    "description": "Описание monitors 5",
+    "price": 13.31,
+    "images": [
+      "/public/images/products/electronics/monitors/5.webp",
+      "/public/images/products/electronics/monitors/5-2.webp",
+      "/public/images/products/electronics/monitors/5-3.webp"
+    ],
+    "stock": 26,
+    "rating": {
+      "rate": 3.9,
+      "count": 315
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "monitors",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 56,
+    "slug": "monitors-6",
+    "title": "monitors 6",
+    "description": "Описание monitors 6",
+    "price": 29.27,
+    "images": [
+      "/public/images/products/electronics/monitors/6.webp",
+      "/public/images/products/electronics/monitors/6-2.webp",
+      "/public/images/products/electronics/monitors/6-3.webp",
+      "/public/images/products/electronics/monitors/6-4.webp"
+    ],
+    "stock": 67,
+    "rating": {
+      "rate": 4,
+      "count": 317
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "monitors",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 57,
+    "slug": "robotic-vacuum-cleaners-1",
+    "title": "robotic-vacuum-cleaners 1",
+    "description": "Описание robotic-vacuum-cleaners 1",
+    "price": 24.46,
+    "images": [
+      "/public/images/products/electronics/robotic-vacuum-cleaners/1.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/1-2.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/1-3.webp"
+    ],
+    "stock": 50,
+    "rating": {
+      "rate": 0.8,
+      "count": 318
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "robotic-vacuum-cleaners",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 58,
+    "slug": "robotic-vacuum-cleaners-2",
+    "title": "robotic-vacuum-cleaners 2",
+    "description": "Описание robotic-vacuum-cleaners 2",
+    "price": 28.91,
+    "images": [
+      "/public/images/products/electronics/robotic-vacuum-cleaners/2.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/2-2.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/2-3.webp"
+    ],
+    "stock": 82,
+    "rating": {
+      "rate": 2.1,
+      "count": 333
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "robotic-vacuum-cleaners",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 59,
+    "slug": "robotic-vacuum-cleaners-3",
+    "title": "robotic-vacuum-cleaners 3",
+    "description": "Описание robotic-vacuum-cleaners 3",
+    "price": 20.16,
+    "images": [
+      "/public/images/products/electronics/robotic-vacuum-cleaners/3.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/3-2.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/3-3.webp"
+    ],
+    "stock": 53,
+    "rating": {
+      "rate": 4.6,
+      "count": 461
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "robotic-vacuum-cleaners",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 60,
+    "slug": "robotic-vacuum-cleaners-4",
+    "title": "robotic-vacuum-cleaners 4",
+    "description": "Описание robotic-vacuum-cleaners 4",
+    "price": 24.47,
+    "images": [
+      "/public/images/products/electronics/robotic-vacuum-cleaners/4.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/4-2.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/4-3.webp"
+    ],
+    "stock": 91,
+    "rating": {
+      "rate": 0.5,
+      "count": 384
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "robotic-vacuum-cleaners",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 61,
+    "slug": "robotic-vacuum-cleaners-5",
+    "title": "robotic-vacuum-cleaners 5",
+    "description": "Описание robotic-vacuum-cleaners 5",
+    "price": 25.01,
+    "images": [
+      "/public/images/products/electronics/robotic-vacuum-cleaners/5.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/5-2.webp",
+      "/public/images/products/electronics/robotic-vacuum-cleaners/5-3.webp"
+    ],
+    "stock": 170,
+    "rating": {
+      "rate": 3.5,
+      "count": 189
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "robotic-vacuum-cleaners",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 62,
+    "slug": "smartphones-1",
+    "title": "smartphones 1",
+    "description": "Описание smartphones 1",
+    "price": 14.34,
+    "images": [
+      "/public/images/products/electronics/smartphones/1.webp",
+      "/public/images/products/electronics/smartphones/1-2.webp",
+      "/public/images/products/electronics/smartphones/1-3.webp",
+      "/public/images/products/electronics/smartphones/1-4.webp",
+      "/public/images/products/electronics/smartphones/1-5.webp"
+    ],
+    "stock": 136,
+    "rating": {
+      "rate": 2.7,
+      "count": 223
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 63,
+    "slug": "smartphones-2",
+    "title": "smartphones 2",
+    "description": "Описание smartphones 2",
+    "price": 12.46,
+    "images": [
+      "/public/images/products/electronics/smartphones/2.webp",
+      "/public/images/products/electronics/smartphones/2-2.webp",
+      "/public/images/products/electronics/smartphones/2-3.webp",
+      "/public/images/products/electronics/smartphones/2-4.webp",
+      "/public/images/products/electronics/smartphones/2-5.webp",
+      "/public/images/products/electronics/smartphones/2-6.webp",
+      "/public/images/products/electronics/smartphones/2-7.webp",
+      "/public/images/products/electronics/smartphones/2-8.webp"
+    ],
+    "stock": 74,
+    "rating": {
+      "rate": 3.4,
+      "count": 444
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 64,
+    "slug": "smartphones-3",
+    "title": "smartphones 3",
+    "description": "Описание smartphones 3",
+    "price": 11.26,
+    "images": [
+      "/public/images/products/electronics/smartphones/3-1.webp",
+      "/public/images/products/electronics/smartphones/3-2.webp",
+      "/public/images/products/electronics/smartphones/3-3.webp",
+      "/public/images/products/electronics/smartphones/3-4.webp",
+      "/public/images/products/electronics/smartphones/3-5.webp",
+      "/public/images/products/electronics/smartphones/3-6.webp",
+      "/public/images/products/electronics/smartphones/3-7.webp",
+      "/public/images/products/electronics/smartphones/3-8.webp"
+    ],
+    "stock": 112,
+    "rating": {
+      "rate": 3.4,
+      "count": 130
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 65,
+    "slug": "smartphones-4",
+    "title": "smartphones 4",
+    "description": "Описание smartphones 4",
+    "price": 10.97,
+    "images": [
+      "/public/images/products/electronics/smartphones/4.webp",
+      "/public/images/products/electronics/smartphones/4-2.webp",
+      "/public/images/products/electronics/smartphones/4-3.webp",
+      "/public/images/products/electronics/smartphones/4-4.webp",
+      "/public/images/products/electronics/smartphones/4-5.webp",
+      "/public/images/products/electronics/smartphones/4-6.webp",
+      "/public/images/products/electronics/smartphones/4-7.webp",
+      "/public/images/products/electronics/smartphones/4-8.webp"
+    ],
+    "stock": 67,
+    "rating": {
+      "rate": 0.6,
+      "count": 392
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 66,
+    "slug": "smartphones-5",
+    "title": "smartphones 5",
+    "description": "Описание smartphones 5",
+    "price": 15.34,
+    "images": [
+      "/public/images/products/electronics/smartphones/5.webp",
+      "/public/images/products/electronics/smartphones/5-2.webp",
+      "/public/images/products/electronics/smartphones/5-3.webp",
+      "/public/images/products/electronics/smartphones/5-4.webp"
+    ],
+    "stock": 116,
+    "rating": {
+      "rate": 4.2,
+      "count": 234
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 67,
+    "slug": "smartphones-6",
+    "title": "smartphones 6",
+    "description": "Описание smartphones 6",
+    "price": 19.4,
+    "images": [
+      "/public/images/products/electronics/smartphones/6.webp",
+      "/public/images/products/electronics/smartphones/6-2.webp",
+      "/public/images/products/electronics/smartphones/6-3.webp",
+      "/public/images/products/electronics/smartphones/6-4.webp"
+    ],
+    "stock": 34,
+    "rating": {
+      "rate": 0.4,
+      "count": 150
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 68,
+    "slug": "smartphones-7",
+    "title": "smartphones 7",
+    "description": "Описание smartphones 7",
+    "price": 10.79,
+    "images": [
+      "/public/images/products/electronics/smartphones/7.webp",
+      "/public/images/products/electronics/smartphones/7-2.webp",
+      "/public/images/products/electronics/smartphones/7-3.webp"
+    ],
+    "stock": 33,
+    "rating": {
+      "rate": 2.8,
+      "count": 474
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  },
+  {
+    "id": 69,
+    "slug": "smartphones-8",
+    "title": "smartphones 8",
+    "description": "Описание smartphones 8",
+    "price": 17.03,
+    "images": [
+      "/public/images/products/electronics/smartphones/8.webp",
+      "/public/images/products/electronics/smartphones/8-2.webp",
+      "/public/images/products/electronics/smartphones/8-3.webp"
+    ],
+    "stock": 36,
+    "rating": {
+      "rate": 3,
+      "count": 239
+    },
+    "isFavorite": false,
+    "quantity": 0,
+    "category": "electronics",
+    "subcategory": "smartphones",
+    "characteristics": [
+      "Материал: 100% хлопок",
+      "Цвет: разный",
+      "Размеры: S, M, L, XL"
+    ]
+  }
+]

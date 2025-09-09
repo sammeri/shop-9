@@ -1,0 +1,54 @@
+[
+  {
+    "name": "art",
+    "count": 8,
+    "subcategories": []
+  },
+  {
+    "name": "clothing",
+    "count": 34,
+    "subcategories": [
+      {
+        "name": "hoodie",
+        "count": 9,
+        "subcategories": []
+      },
+      {
+        "name": "sneakers",
+        "count": 12,
+        "subcategories": []
+      },
+      {
+        "name": "t-shirts",
+        "count": 13,
+        "subcategories": []
+      }
+    ]
+  },
+  {
+    "name": "electronics",
+    "count": 27,
+    "subcategories": [
+      {
+        "name": "laptops",
+        "count": 8,
+        "subcategories": []
+      },
+      {
+        "name": "monitors",
+        "count": 6,
+        "subcategories": []
+      },
+      {
+        "name": "robotic-vacuum-cleaners",
+        "count": 5,
+        "subcategories": []
+      },
+      {
+        "name": "smartphones",
+        "count": 8,
+        "subcategories": []
+      }
+    ]
+  }
+]

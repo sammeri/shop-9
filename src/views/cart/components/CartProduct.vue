@@ -1,8 +1,11 @@
 <script setup>
 import VLazyImage from 'v-lazy-image';
-import { useFavorites } from '@/stores/favoritesProducts';
-import { useCart } from '@/stores/cartProducts';
+import { useFavorites } from '@/stores/useFavoritesStore';
+import { useCart } from '@/stores/useCartStore';
 import { computed } from 'vue';
+
+const DEV_MODE = import.meta.env.DEV;
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '');
 
 const props = defineProps({
   item: {
@@ -18,6 +21,8 @@ const props = defineProps({
 // data
 const favoritesStore = useFavorites();
 const cartStore = useCart();
+const imageUrl = DEV_MODE ? props.item.images[0] : props.item.images[0].replace('/public', '');
+
 // computed
 const sum = computed(() => {
   let num = props.item.price * props.item.quantity;
@@ -31,12 +36,16 @@ const { addQuantity, removeQuantity, removeProduct } = cartStore;
 
 <template>
   <div class="z-50 flex">
-    <div class="succsess-alert flex h-32 w-full cursor-default items-center bg-[#ffffff]">
+    <div class="succsess-alert flex w-full cursor-default items-center bg-[#ffffff]">
       <div class="flex h-full gap-4 p-3">
         <div
-          class="flex h-full w-28 shrink-0 justify-center bg-white/5 text-[#2b9875] backdrop-blur-xl"
+          class="flex h-full min-h-42 w-28 shrink-0 justify-center bg-white/5 text-[#2b9875] backdrop-blur-xl"
         >
-          <v-lazy-image class="w-auto object-contain" :src="item.image" alt="Product Image" />
+          <v-lazy-image
+            class="h-full w-full object-contain"
+            :src="`${BASE_URL}${imageUrl}`"
+            alt="Product Image"
+          />
         </div>
         <div class="flex flex-col justify-between">
           <p class="line-clamp-2 text-gray-500">{{ item.title }}</p>

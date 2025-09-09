@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import ProductItem from '@/components/product/ProductItemCard.vue';
-import { useFavorites } from '@/stores/favoritesProducts';
+import { useFavorites } from '@/stores/useFavoritesStore';
 import Button from 'primevue/button';
 
 // data
@@ -42,14 +42,16 @@ const pending = computed(() => favoritesStore.pending);
           посмотреть или купить.
         </p>
       </span>
-      <Button severity="contrast" variant="outlined" class="group relative">
-        <router-link class="flex items-center gap-2" to="/">
-          <vue-feather
-            class="relative group-hover:left-1"
-            stroke="black"
-            type="arrow-right"
-          ></vue-feather>
-          В каталог
+      <Button severity="contrast" style="padding: 0" variant="outlined" class="group relative">
+        <router-link to="/">
+          <div class="inline-flex items-center gap-2 p-2">
+            <vue-feather
+              class="relative group-hover:left-1"
+              stroke="black"
+              type="arrow-right"
+            ></vue-feather>
+            В каталог
+          </div>
         </router-link>
       </Button>
     </div>

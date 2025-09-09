@@ -5,9 +5,8 @@ import { createPinia } from 'pinia';
 
 import App from './App.vue';
 import router from './router';
-/* UI Библиотека + стандартный пресет Aura */
+/* UI Библиотека + стандартный пресет Nora */
 import PrimeVue from 'primevue/config';
-// import Material from '@primeuix/themes/material'
 import Nora from '@primeuix/themes/nora';
 import { definePreset } from '@primeuix/themes';
 
