@@ -3,7 +3,7 @@ import { defineStore, acceptHMRUpdate } from 'pinia';
 import { getCategories, getCategory } from '@/api/categories';
 
 export const useCategories = defineStore('categories', () => {
-  const pending = ref(true);
+  const pending = ref(false);
   const allCategories = ref([]);
   const category = ref({});
   const isCategory = ref(false);

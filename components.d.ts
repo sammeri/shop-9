@@ -8,14 +8,20 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Catalog: typeof import('./src/components/Catalog.vue')['default']
     CategoryTabs: typeof import('./src/components/CategoryTabs.vue')['default']
     Galleria: typeof import('primevue/galleria')['default']
+    InfiniteScrollingPagination: typeof import('./src/components/UI/InfiniteScrollingPagination.vue')['default']
     ProductItemCard: typeof import('./src/components/product/ProductItemCard.vue')['default']
+    ProductsList: typeof import('./src/components/ProductsList.vue')['default']
     ProgressBar: typeof import('primevue/progressbar')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheBreadcrumb: typeof import('./src/components/TheBreadcrumb.vue')['default']
+    TheBreadcrumbs: typeof import('./src/components/TheBreadcrumbs.vue')['default']
+    TheCatalog: typeof import('./src/components/TheCatalog.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
+    TheMain: typeof import('./src/components/TheMain.vue')['default']
   }
 }

@@ -9,20 +9,10 @@ const favoritesStore = useFavorites();
 // computed
 const productsF = computed(() => favoritesStore.productsF);
 const pending = computed(() => favoritesStore.pending);
-// methods
-
-//hooks
 </script>
 
 <template>
   <div class="container flex min-h-full w-full grow flex-col items-center">
-    <div v-show="!pending" style="height: 6px"></div>
-    <ProgressBar
-      v-show="pending"
-      class="w-screen"
-      mode="indeterminate"
-      style="height: 6px"
-    ></ProgressBar>
     <h1 class="my-3 mr-auto text-2xl font-bold sm:text-3xl md:text-4xl">Избранное</h1>
     <div
       v-if="!pending && productsF.length"

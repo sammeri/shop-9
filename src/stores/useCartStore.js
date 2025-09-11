@@ -5,7 +5,7 @@ import { useProducts } from './useProductsStore';
 export const useCart = defineStore('cart', () => {
   const productsStore = useProducts();
   const { getData } = productsStore;
-  const pending = ref(true);
+  const pending = ref(false);
   const productsCart = ref([]);
   const counter = computed(() => {
     let total = 0;
@@ -62,15 +62,11 @@ export const useCart = defineStore('cart', () => {
   const addProduct = (item) => {
     // item массив
     if (Array.isArray(item)) {
-      console.log(item);
-
       item.forEach((product) => addProduct(product));
       return;
     }
-    console.log(item);
     // item объект
     const existing = productsCart.value.find((p) => p.id === item.id);
-    console.log(existing);
     if (existing) {
       if (existing.quantity < 10) {
         existing.quantity++;

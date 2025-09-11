@@ -7,7 +7,7 @@ import product from './routes/product';
 import admin from './routes/admin';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/shop-9/'),
   routes: [
     ...home,
     ...cart,

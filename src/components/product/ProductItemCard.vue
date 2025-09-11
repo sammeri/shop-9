@@ -3,22 +3,24 @@ import { ref, computed } from 'vue';
 import VLazyImage from 'v-lazy-image';
 import { useFavorites } from '@/stores/useFavoritesStore';
 import { useCart } from '@/stores/useCartStore';
+import { DEV_MODE, BASE_URL, RESPONSIVE_OPTIONS } from '@/utils/constants';
 
-const DEV_MODE = import.meta.env.DEV;
-const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '');
+let leaveTimer = null;
 
+// data
 const props = defineProps({
   item: {
     type: Object,
     default: null,
   },
 });
-
-// data
-let leaveTimer = null;
-const activeIndex = ref(0);
 const favoritesStore = useFavorites();
 const cartStore = useCart();
+
+// refs
+const activeIndex = ref(0);
+
+// computed
 const images = computed(() => {
   if (!props.item || !props.item.images) return [];
   return props.item.images.map((img, index) => {
@@ -31,20 +33,6 @@ const images = computed(() => {
   });
 });
 
-const responsiveOptions = [
-  {
-    breakpoint: '1024px',
-    numVisible: 5,
-  },
-  {
-    breakpoint: '768px',
-    numVisible: 3,
-  },
-  {
-    breakpoint: '560px',
-    numVisible: 1,
-  },
-];
 // methods
 const { toggleFavorite } = favoritesStore;
 const { addProduct } = cartStore;
@@ -89,7 +77,7 @@ function onContainerLeave() {
           v-model:activeIndex="activeIndex"
           unstyled
           :value="images"
-          :responsiveOptions="responsiveOptions"
+          :responsiveOptions="RESPONSIVE_OPTIONS"
           :numVisible="5"
           :showThumbnails="false"
           :showIndicators="true"

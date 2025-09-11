@@ -5,7 +5,11 @@ import { useCart } from '@/stores/useCartStore';
 
 // data
 const props = defineProps({
-  product: { type: Object, required: true },
+  product: {
+    type: Object,
+    required: true,
+    default: () => ({}),
+  },
 });
 
 const cartStore = useCart();

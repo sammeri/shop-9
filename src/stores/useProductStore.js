@@ -1,18 +1,22 @@
+// stores/useProductStore.js
 import { ref } from 'vue';
 import { defineStore, acceptHMRUpdate } from 'pinia';
 import { getProduct } from '@/api/products';
 
 export const useProduct = defineStore('product', () => {
-  const pending = ref(true);
-  const product = ref({});
+  const pending = ref(false);
+  const product = ref(null);
 
   const getDataProduct = async (id) => {
     pending.value = true;
-    product.value = Object.keys(product.value).length && (product.value = {});
+    product.value = null;
+
     try {
-      product.value = await getProduct(id);
+      const data = await getProduct(id);
+      product.value = data;
+      return product.value;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       pending.value = false;
     }

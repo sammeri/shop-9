@@ -7,9 +7,7 @@ import { useRoute } from 'vue-router';
 import { useProduct } from '@/stores/useProductStore';
 import { useFavorites } from '@/stores/useFavoritesStore';
 import QuantitySelector from './components/QuantitySelector.vue';
-
-const DEV_MODE = import.meta.env.DEV;
-const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '');
+import { DEV_MODE, BASE_URL } from '@/utils/constants';
 
 // data
 const productStore = useProduct();
@@ -17,9 +15,10 @@ const favoritesStore = useFavorites();
 const route = useRoute();
 const activeIndex = ref(0);
 const displayBasic = ref(false);
+
 // computed
 const product = computed(() => productStore.product);
-const pending = computed(() => productStore.pending);
+
 const images = computed(() => {
   if (!product.value || !product.value.images) return [];
   return product.value.images.map((img, index) => {
@@ -50,7 +49,6 @@ const responsiveOptions = [
 // methods
 const { getDataProduct } = productStore;
 const { toggleFavorite } = favoritesStore;
-
 const changeValue = (item) => {
   item.isFavorite = !item.isFavorite;
   toggleFavorite(item);
@@ -68,28 +66,38 @@ onMounted(async () => {
 
 <template>
   <div class="container mb-7 flex min-h-full flex-col items-center justify-center">
-    <ProgressBar
-      v-if="pending"
-      class="w-screen"
-      mode="indeterminate"
-      style="height: 6px"
-    ></ProgressBar>
-
-    <div v-else class="my-10 flex w-full justify-between gap-20">
-      <!-- <v-lazy-image :src="product.image" alt="Product Image" /> -->
-      <div v-if="images.length > 0" class="grow">
+    <div v-if="product" class="p-t my-10 flex w-full justify-between gap-20">
+      <div v-if="images.length > 0" class="w-4/10">
         <Galleria
           v-model:activeIndex="activeIndex"
           :value="images"
           :responsiveOptions="responsiveOptions"
           :numVisible="5"
           :thumbnailsPosition="'right'"
+          verticalThumbnailViewPortHeight="100%"
+          unstyled
+          :pt="{
+            root: 'relative pt-[106.6%] flex  w-full border-none',
+            content: 'absolute flex gap-2  justify-start left-0 top-0 h-full w-full',
+            itemscontainer: 'h-full grow',
+            items: 'h-full',
+            item: 'h-full',
+            thumbnails: 'h-full',
+            thumbnail: 'cursor-pointer',
+            thumbnailcontent: 'relative h-full overflow-hidden ',
+            thumbnailsviewport: 'h-full w-20 ',
+            thumbnailitems: 'flex flex-col gap-2',
+            thumbnailprevbutton:
+              'cursor-pointer absolute top-0 w-full text-white/45 bg-gray-600/45 z-30 hover:bg-gray-600/95 hover:text-white/95',
+            thumbnailnextbutton:
+              'cursor-pointer absolute bottom-0 w-full text-white/45 bg-gray-600/45 z-30 hover:bg-gray-600/95 hover:text-white/95',
+          }"
         >
           <template #item="slotProps">
-            <button class="cursor-pointer" @click="displayBasic = true">
+            <button class="h-full w-full cursor-pointer" @click="displayBasic = true">
               <v-lazy-image
                 v-if="slotProps.item?.image"
-                class="h-full w-full object-contain"
+                class="max-h-full w-full object-cover"
                 :src="slotProps.item.image"
                 :alt="slotProps.item.alt"
               />
@@ -99,7 +107,7 @@ onMounted(async () => {
           <template #thumbnail="slotProps">
             <v-lazy-image
               v-if="slotProps.item?.image"
-              class="h-20 w-auto object-contain"
+              class="w-auto object-contain"
               :src="slotProps.item.image"
               :alt="slotProps.item.alt"
             />
@@ -109,7 +117,7 @@ onMounted(async () => {
       <div v-else>
         <p>Изображений нет :(</p>
       </div>
-      <div class="flex w-1/2 flex-col gap-3 bg-gray-50 p-2">
+      <div class="flex w-6/10 flex-col gap-3 bg-gray-50 p-2">
         <div class="flex items-center justify-between">
           <h1 class="text-4xl font-bold">{{ product.title }}</h1>
           <vue-feather
@@ -144,38 +152,40 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <Galleria
-      v-model:activeIndex="activeIndex"
-      v-model:visible="displayBasic"
-      :value="images"
-      :responsiveOptions="responsiveOptions"
-      :numVisible="5"
-      :circular="true"
-      :fullScreen="true"
-      :showItemNavigators="true"
-      :maskClass="'bg-black'"
-      unstyled
-      :pt="{
-        mask: 'bg-black',
-      }"
-    >
-      <template #item="slotProps">
-        <v-lazy-image
-          v-if="slotProps.item?.image"
-          class="h-full max-h-dvh w-full object-contain"
-          :src="slotProps.item.image"
-          :alt="slotProps.item.alt"
-        />
-      </template>
-      <template #thumbnail="slotProps">
-        <v-lazy-image
-          v-if="slotProps.item?.image"
-          class="h-20 w-auto object-contain"
-          :src="slotProps.item.image"
-          :alt="slotProps.item.alt"
-        />
-      </template>
-    </Galleria>
+    <Teleport to="body">
+      <Galleria
+        v-model:activeIndex="activeIndex"
+        v-model:visible="displayBasic"
+        :value="images"
+        :responsiveOptions="responsiveOptions"
+        :numVisible="5"
+        :circular="true"
+        :fullScreen="true"
+        :showItemNavigators="true"
+        :maskClass="'bg-black'"
+        unstyled
+        :pt="{
+          mask: 'fixed top-0 left-0 w-full h-full bg-black',
+        }"
+      >
+        <template #item="slotProps">
+          <v-lazy-image
+            v-if="slotProps.item?.image"
+            class="h-full max-h-dvh w-full object-contain"
+            :src="slotProps.item.image"
+            :alt="slotProps.item.alt"
+          />
+        </template>
+        <template #thumbnail="slotProps">
+          <v-lazy-image
+            v-if="slotProps.item?.image"
+            class="h-20 w-auto object-contain"
+            :src="slotProps.item.image"
+            :alt="slotProps.item.alt"
+          />
+        </template>
+      </Galleria>
+    </Teleport>
   </div>
 </template>
 

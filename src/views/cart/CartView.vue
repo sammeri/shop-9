@@ -35,13 +35,6 @@ const num_word = (value, words) => {
 
 <template>
   <div class="container flex min-h-full grow flex-col items-center">
-    <div v-show="!pending" style="height: 6px"></div>
-    <ProgressBar
-      v-show="pending"
-      class="w-screen"
-      mode="indeterminate"
-      style="height: 6px"
-    ></ProgressBar>
     <div class="my-3 flex w-full justify-between text-2xl">
       <h1 class="font-bold sm:text-3xl md:text-4xl">Корзина</h1>
       <div class="relative flex gap-3 border-1 border-red-600 p-1">

@@ -2,7 +2,7 @@ import { computed, ref } from 'vue';
 import { defineStore, acceptHMRUpdate } from 'pinia';
 
 export const useFavorites = defineStore('favorites', () => {
-  const pending = ref(true);
+  const pending = ref(false);
   const productsF = ref([]);
   const counter = computed(() => productsF.value.length);
 

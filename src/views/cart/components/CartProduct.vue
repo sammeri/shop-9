@@ -3,9 +3,7 @@ import VLazyImage from 'v-lazy-image';
 import { useFavorites } from '@/stores/useFavoritesStore';
 import { useCart } from '@/stores/useCartStore';
 import { computed } from 'vue';
-
-const DEV_MODE = import.meta.env.DEV;
-const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '');
+import { DEV_MODE, BASE_URL } from '@/utils/constants';
 
 const props = defineProps({
   item: {
