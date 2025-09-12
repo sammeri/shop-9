@@ -1,10 +1,8 @@
 import { computed, ref, watch } from 'vue';
 import { defineStore, acceptHMRUpdate } from 'pinia';
-import { useProducts } from './useProductsStore';
+import { getProducts } from '@/api/products';
 
 export const useCart = defineStore('cart', () => {
-  const productsStore = useProducts();
-  const { getData } = productsStore;
   const pending = ref(false);
   const productsCart = ref([]);
   const counter = computed(() => {
@@ -115,8 +113,8 @@ export const useCart = defineStore('cart', () => {
   };
 
   const addAllCart = async () => {
-    const data = await getData();
-
+    const data = await getProducts({ page: 1, limit: 50 });
+    console.log(data);
     data.forEach((item) => {
       addProduct(item);
     });

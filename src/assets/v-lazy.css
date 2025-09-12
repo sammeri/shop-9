@@ -1,8 +1,8 @@
-.v-lazy-image {
+.v-lazy-image.first-item {
   filter: blur(20px);
   transition: filter 0.7s;
 }
 
-.v-lazy-image-loaded {
+.v-lazy-image.v-lazy-image-loaded {
   filter: blur(0);
 }

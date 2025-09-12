@@ -9,7 +9,7 @@ import router from './router';
 import PrimeVue from 'primevue/config';
 import Nora from '@primeuix/themes/nora';
 import { definePreset } from '@primeuix/themes';
-
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue';
 /* Иконки */
 import VueFeather from 'vue-feather';
 
@@ -44,6 +44,8 @@ app.use(PrimeVue, {
     },
   },
 });
+
+app.use(autoAnimatePlugin);
 
 app.component(VueFeather.name, VueFeather);
 

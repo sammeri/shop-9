@@ -98,6 +98,7 @@ function onContainerLeave() {
           <template #item="slotProps">
             <v-lazy-image
               v-if="slotProps.item?.image"
+              :class="slotProps.item.image === images[0].image ? 'first-item' : ''"
               class="relative z-20 h-full min-h-full w-full max-w-full object-contain"
               :src="slotProps.item.image"
               :alt="slotProps.item.alt"

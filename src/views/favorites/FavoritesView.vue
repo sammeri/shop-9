@@ -15,6 +15,7 @@ const pending = computed(() => favoritesStore.pending);
   <div class="container flex min-h-full w-full grow flex-col items-center">
     <h1 class="my-3 mr-auto text-2xl font-bold sm:text-3xl md:text-4xl">Избранное</h1>
     <div
+      v-auto-animate
       v-if="!pending && productsF.length"
       class="mb-4 grid w-full grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
     >

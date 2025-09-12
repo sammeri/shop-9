@@ -1,16 +1,19 @@
 <script setup>
-import { computed, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useProducts } from '@/stores/useProductsStore';
 import ProductItemCard from '@/components/product/ProductItemCard.vue';
+import InfiniteScrollingPagination from './UI/InfiniteScrollingPagination.vue';
 
-//data
+// refs
+const cursor = ref(null);
+
+// data
 const props = defineProps({
   category: {
     type: String,
     default: 'all',
   },
 });
-
 const productsStore = useProducts();
 
 // computed
@@ -25,19 +28,28 @@ const productList = computed(() => {
 
 // methods
 const { getData, syncWithLocalStorage } = productsStore;
+const loadMore = async () => {
+  if (cursor.value === 'end') return;
+  const nextCursor = await getData(cursor.value);
+  cursor.value = nextCursor;
+};
 
 // hooks
 onMounted(async () => {
-  await getData();
+  const initialCursor = await getData();
+  cursor.value = initialCursor;
+
   syncWithLocalStorage('favorites');
   syncWithLocalStorage('cart');
 });
 </script>
 
 <template>
-  <div class="mb-4 grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+  <div class="">
     <div v-if="errorMessage">{{ errorMessage }}</div>
-    <ProductItemCard v-else v-for="product in productList" :key="product.id" :item="product" />
+    <infinite-scrolling-pagination v-else :cursor="cursor" @loadMore="loadMore">
+      <ProductItemCard v-for="product in productList" :key="product.id" :item="product" />
+    </infinite-scrolling-pagination>
   </div>
 </template>
 

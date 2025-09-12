@@ -50,7 +50,7 @@ const num_word = (value, words) => {
             type="arrow-up-circle"
             size="16px"
           ></vue-feather>
-          <span class="text-sm">Добавить всё</span>
+          <span class="text-sm">Добавить (50)</span>
         </button>
         <button
           type="button"
@@ -71,7 +71,7 @@ const num_word = (value, words) => {
       v-if="!pending && productsCart.length"
       class="grid-rows-auto mb-4 grid w-full grid-cols-6 gap-3"
     >
-      <div class="col-start-1 col-end-5 flex flex-col gap-3">
+      <div class="col-start-1 col-end-5 flex flex-col gap-3" v-auto-animate>
         <CartProduct
           v-for="(product, index) in productsCart"
           :key="product.id"

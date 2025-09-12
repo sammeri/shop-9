@@ -8,15 +8,40 @@ export const useProducts = defineStore('products', () => {
   const products = ref([]);
   const isProducts = ref(false);
   const errorMessage = ref('');
+  // для бесконечного скролла
+  const page = ref(1);
+  const pageSize = 15;
+  const hasMore = ref(true);
 
-  const getData = async () => {
+  /**
+   * Загружает товары
+   * @param {number} nextPage - номер страницы, если не передан, используется текущий page.value
+   * @returns {number|string} - следующий курсор или 'end'
+   */
+  const getData = async (nextPage = page.value) => {
+    if (!hasMore.value || pending.value) return 'end';
+
     pending.value = true;
     try {
-      products.value = await getProducts();
+      const response = await getProducts({ page: nextPage, limit: pageSize });
+      console.log(response);
+      // дошли до конца данных
+      if (response.length < pageSize) {
+        hasMore.value = false;
+      }
+      // для первой страницы
+      if (nextPage === 1) {
+        products.value = response;
+      } else {
+        products.value = [...products.value, ...response];
+      }
       isProducts.value = products.value.length > 0;
-      return products.value;
+
+      page.value = nextPage + 1;
+      return hasMore.value ? page.value : 'end';
     } catch (error) {
       errorMessage.value = error.message;
+      return 'end';
     } finally {
       pending.value = false;
     }
@@ -45,6 +70,12 @@ export const useProducts = defineStore('products', () => {
     errorMessage.value = message;
   };
 
+  const resetPagination = () => {
+    page.value = 1;
+    hasMore.value = true;
+    products.value = [];
+  };
+
   return {
     pending,
     products,
@@ -53,6 +84,7 @@ export const useProducts = defineStore('products', () => {
     syncWithLocalStorage,
     errorMessage,
     simulateError,
+    resetPagination,
   };
 });
 
