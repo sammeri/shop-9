@@ -37,7 +37,7 @@
 ### Установка
 
 - Склонируйте репозиторий:
-  git clone https://github.com/your-username/shop-9.git
+  git clone https://github.com/sammeri/shop-9.git
 
 - Перейдите в папку проекта:
   `cd shop-9`
