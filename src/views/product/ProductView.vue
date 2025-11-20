@@ -31,21 +31,6 @@ const images = computed(() => {
   });
 });
 
-const responsiveOptions = [
-  {
-    breakpoint: '1024px',
-    numVisible: 5,
-  },
-  {
-    breakpoint: '768px',
-    numVisible: 3,
-  },
-  {
-    breakpoint: '560px',
-    numVisible: 1,
-  },
-];
-
 // methods
 const { getDataProduct } = productStore;
 const { toggleFavorite } = favoritesStore;
@@ -71,7 +56,6 @@ onMounted(async () => {
         <Galleria
           v-model:activeIndex="activeIndex"
           :value="images"
-          :responsiveOptions="responsiveOptions"
           :numVisible="5"
           :thumbnailsPosition="'right'"
           verticalThumbnailViewPortHeight="100%"
@@ -132,7 +116,7 @@ onMounted(async () => {
 
         <span class="flex items-center gap-3 text-xl">
           <vue-feather type="star" stroke="black" fill="yellow"></vue-feather>
-          {{ product.rating?.rate }} • {{ product.rating?.count }} reviews
+          {{ product.rating?.rate }} • {{ product.rating?.count }} отзывов
         </span>
 
         <div class="mt-auto flex flex-col gap-2">
@@ -157,15 +141,27 @@ onMounted(async () => {
         v-model:activeIndex="activeIndex"
         v-model:visible="displayBasic"
         :value="images"
-        :responsiveOptions="responsiveOptions"
         :numVisible="5"
         :circular="true"
         :fullScreen="true"
         :showItemNavigators="true"
         :maskClass="'bg-black'"
+        :thumbnailsPosition="'left'"
+        verticalThumbnailViewPortHeight="100%"
         unstyled
         :pt="{
+          root: 'h-full',
+          content: 'relative flex justify-center h-full',
           mask: 'fixed top-0 left-0 w-full h-full bg-black',
+          closebutton:
+            'absolute z-100 cursor-pointer top-5 right-10 text-white w-20 h-20 hover:bg-gray-600/50',
+          closeicon: 'w-20 h-20',
+          itemscontainer: 'order-1 flex items-center',
+          thumbnails: 'absolute top-0 h-full order-0 left-16 overflow-hidden',
+          thumbnailsviewport: 'overflow-auto max-h-dvh',
+          thumbnailitems: 'flex flex-col gap-2 ',
+          prevbutton: 'hidden',
+          nextbutton: 'hidden',
         }"
       >
         <template #item="slotProps">
@@ -179,7 +175,7 @@ onMounted(async () => {
         <template #thumbnail="slotProps">
           <v-lazy-image
             v-if="slotProps.item?.image"
-            class="h-20 w-auto object-contain"
+            class="h-36 w-auto object-contain"
             :src="slotProps.item.image"
             :alt="slotProps.item.alt"
           />

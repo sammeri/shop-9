@@ -2,7 +2,6 @@
 import { computed } from 'vue';
 import CartProduct from '@/views/cart/components/CartProduct.vue';
 import { useCart } from '@/stores/useCartStore';
-// import { useFavorites } from '@/stores/favoritesProducts'
 import Button from 'primevue/button';
 
 // data
@@ -20,6 +19,7 @@ const total = computed(() => {
 
   return sum.toFixed(1);
 });
+
 // methods
 const { addAllCart, removeAllCart } = cartStore;
 

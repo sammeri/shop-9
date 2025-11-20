@@ -23,6 +23,7 @@ export const useCart = defineStore('cart', () => {
   watch(
     productsCart,
     (newCart) => {
+      console.log(newCart);
       localStorage.setItem('cart', JSON.stringify(newCart));
     },
     { deep: true },
@@ -114,7 +115,7 @@ export const useCart = defineStore('cart', () => {
 
   const addAllCart = async () => {
     const data = await getProducts({ page: 1, limit: 50 });
-    console.log(data);
+
     data.forEach((item) => {
       addProduct(item);
     });

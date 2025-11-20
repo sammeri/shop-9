@@ -24,18 +24,20 @@ export const useProducts = defineStore('products', () => {
     pending.value = true;
     try {
       const response = await getProducts({ page: nextPage, limit: pageSize });
-      console.log(response);
-      // дошли до конца данных
+
       if (response.length < pageSize) {
         hasMore.value = false;
       }
-      // для первой страницы
+
       if (nextPage === 1) {
         products.value = response;
       } else {
         products.value = [...products.value, ...response];
       }
       isProducts.value = products.value.length > 0;
+
+      syncWithLocalStorage('cart');
+      syncWithLocalStorage('favorites');
 
       page.value = nextPage + 1;
       return hasMore.value ? page.value : 'end';
